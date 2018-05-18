@@ -1,0 +1,68 @@
+<header class="center-align">
+  <h1><span>B</span>ob's <span>B</span>urgers?</h1>
+  <img src="/assets/images/blogpick_bobsburgersdance.gif"><br>
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create a New Burger</a>
+</header>
+
+<div class="row">
+  <section class="section col s12 l6">
+  <ul class="collection with-header">
+    <li class="collection-header teal lighten-2 white-text">Order UP!</li>
+    {{#each burgers}} 
+      {{#unless devoured}} 
+        {{> burgers/burger-block devoured=true}} 
+      {{/unless}} 
+    {{/each}}
+  </ul>
+  </section>
+
+  <section class="section col s12 l6">
+  <ul class="collection with-header">
+    <li class="collection-header teal lighten-2 white-text">Burgers Eaten</li>
+    {{#each burgers}} 
+      {{#if devoured}} 
+        {{> burgers/burger-block devoured=false}} 
+      {{/if}} 
+    {{/each}}
+  </ul>
+  </section>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="card">
+      <div class="card-content">
+
+        <form class="create-form">
+          <div class="form-group">
+            <label for="ca">Burger Name:</label>
+            <input type="text" id="ca" name="burger_name" placeholder="Rest in Peas Burger">
+          </div>
+          <div class="form-group">
+            <p>
+              <label>
+                <input name="devoured" type="radio" value="1" checked />
+                <span>Already Eaten</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="devoured" type="radio" value="0" />
+                <span>Order UP!</span>
+              </label>
+            </p>
+          </div>
+          <div class="form-group form-controls">
+            <button class="waves-effect waves-light btn" type="submit">Add Burger</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+  </div>
+</div>
+

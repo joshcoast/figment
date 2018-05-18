@@ -1,0 +1,33 @@
+{
+  "name": "figment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshcoast/figment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshcoast/figment/issues"
+  },
+  "homepage": "https://github.com/joshcoast/figment#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "chia": "0.0.1",
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11",
+    "mocha": "^5.1.1",
+    "mysql": "^2.15.0",
+    "nightmare": "^3.0.1",
+    "npm-expansions": "^2.2.4",
+    "passport-facebook": "^2.1.1",
+    "sequelize": "^4.37.7",
+    "showdown": "^1.8.6"
+  }
+}
