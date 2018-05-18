@@ -1,30 +1,25 @@
 <header class="center-align">
-  <h1><span>B</span>ob's <span>B</span>urgers?</h1>
-  <img src="/assets/images/blogpick_bobsburgersdance.gif"><br>
+  <h1>
+    <span>B</span>ob's
+    <span>B</span>urgers?</h1>
+  <img src="/assets/images/blogpick_bobsburgersdance.gif">
+  <br>
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Create a New Burger</a>
 </header>
 
 <div class="row">
   <section class="section col s12 l6">
-  <ul class="collection with-header">
-    <li class="collection-header teal lighten-2 white-text">Order UP!</li>
-    {{#each burgers}} 
-      {{#unless devoured}} 
-        {{> burgers/burger-block devoured=true}} 
-      {{/unless}} 
-    {{/each}}
-  </ul>
+    <ul class="collection with-header">
+      <li class="collection-header teal lighten-2 white-text">Order UP!</li>
+      {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=true}} {{/unless}} {{/each}}
+    </ul>
   </section>
 
   <section class="section col s12 l6">
-  <ul class="collection with-header">
-    <li class="collection-header teal lighten-2 white-text">Burgers Eaten</li>
-    {{#each burgers}} 
-      {{#if devoured}} 
-        {{> burgers/burger-block devoured=false}} 
-      {{/if}} 
-    {{/each}}
-  </ul>
+    <ul class="collection with-header">
+      <li class="collection-header teal lighten-2 white-text">Burgers Eaten</li>
+      {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+    </ul>
   </section>
 </div>
 
@@ -65,4 +60,3 @@
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
   </div>
 </div>
-
