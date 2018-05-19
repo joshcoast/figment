@@ -15,7 +15,7 @@
   <div class="container hidden">
     <div class="row top-30">
       <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/blog">Go to Blog</a>
+        <a class="btn btn-light" href="/stories">Go to Stories</a>
       </div>
       <div class="col-md-2 col-sm-2">
         <a class="btn btn-light" href="/authors">Manage Authors</a>
@@ -26,16 +26,24 @@
         <form id="cms">
           <div class="form-group">
             <label for="title">Title:</label>
-            <input placeholder="Post Title" type="text" class="form-control" id="title">
+            <input placeholder="Story Title" type="text" class="form-control" id="title">
             <br />
             <label for="body">Body:</label>
-            <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
+            <textarea placeholder="Story Body" class="form-control" rows="10" id="body"></textarea>
             <div class="form-group">
               <label for="category">Select Author:</label>
               <select class="custom-select" id="author">
               </select>
             </div>
             <br />
+            <div class="form-group">
+              <label for="category">Select Category:</label>
+              <select class="custom-select" id="category">
+                <option value="Personal">Personal</option>
+                <option value="Product Review">Product Review</option>
+                <option value="Political">Political</option>
+              </select>
+            </div>
             <button type="submit" class="btn btn-success submit">Submit</button>
           </div>
         </form>
