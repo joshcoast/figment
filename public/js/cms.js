@@ -1,66 +1,88 @@
 $(document).ready(function() {
-  // Gets an optional query string from our url (i.e. ?story_id=23)
+  // Getting jQuery references to the story body, title, form, and author select
+  var bodyInput = $("#body");
+  var titleInput = $("#title");
+  var cmsForm = $("#cms");
+  var authorSelect = $("#author");
+  // Adding an event listener for when the form is submitted
+  $(cmsForm).on("submit", handleFormSubmit);
+  // Gets the part of the url that comes after the "?" (which we have if we're updating a story)
   var url = window.location.search;
   var storyId;
+  var authorId;
   // Sets a flag for whether or not we're updating a story to be false initially
   var updating = false;
 
   // If we have this section in our url, we pull out the story id from the url
-  // In localhost:8080/cms?story_id=1, storyId is 1
+  // In '?story_id=1', storyId is 1
   if (url.indexOf("?story_id=") !== -1) {
     storyId = url.split("=")[1];
-    getStoryData(storyId);
+    getPostData(storyId, "story");
+  }
+  // Otherwise if we have an author_id in our url, preset the author select box to be our Author
+  else if (url.indexOf("?author_id=") !== -1) {
+    authorId = url.split("=")[1];
   }
 
-  // Getting jQuery references to the story body, title, form, and category select
-  var bodyInput = $("#body");
-  var titleInput = $("#title");
-  var cmsForm = $("#cms");
-  var storyCategorySelect = $("#category");
-  // Giving the storyCategorySelect a default value
-  storyCategorySelect.val("Personal");
-  // Adding an event listener for when the form is submitted
-  $(cmsForm).on("submit", function handleFormSubmit(event) {
+  // Getting the authors, and their storys
+  getAuthors();
+
+  // A function for handling what happens when the form to create a new story is submitted
+  function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the story if we are missing a body or a title
-    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+    // Wont submit the story if we are missing a body, title, or author
+    if (!titleInput.val().trim() || !bodyInput.val().trim() || !authorSelect.val()) {
       return;
     }
-    // Constructing a newStory object to hand to the database
-    var newStory = {
-      title: titleInput.val().trim(),
-      body: bodyInput.val().trim(),
-      category: storyCategorySelect.val()
+    // Constructing a newPost object to hand to the database
+    var newPost = {
+      title: titleInput
+        .val()
+        .trim(),
+      body: bodyInput
+        .val()
+        .trim(),
+      AuthorId: authorSelect.val()
     };
 
-    console.log(newStory);
-
-    // If we're updating a story run updateStory to update a story
-    // Otherwise run submitStory to create a whole new story
+    // If we're updating a story run updatePost to update a story
+    // Otherwise run submitPost to create a whole new story
     if (updating) {
-      newStory.id = storyId;
-      updateStory(newStory);
+      newPost.id = storyId;
+      updatePost(newPost);
     }
     else {
-      submitStory(newStory);
+      submitPost(newPost);
     }
-  });
+  }
 
-  // Submits a new story and brings user to stories page upon completion
-  function submitStory(Story) {
-    $.post("/api/stories/", Story, function() {
-      window.location.href = "/stories";
+  // Submits a new story and brings user to story-index page upon completion
+  function submitPost(story) {
+    $.post("/api/story-index", story, function() {
+      window.location.href = "/story-index";
     });
   }
 
-  // Gets story data for a story if we're editing
-  function getStoryData(id) {
-    $.get("/api/stories/" + id, function(data) {
+  // Gets story data for the current story if we're editing, or if we're adding to an author's existing stories
+  function getPostData(id, type) {
+    var queryUrl;
+    switch (type) {
+    case "story":
+      queryUrl = "/api/story-index/" + id;
+      break;
+    case "author":
+      queryUrl = "/api/authors/" + id;
+      break;
+    default:
+      return;
+    }
+    $.get(queryUrl, function(data) {
       if (data) {
+        console.log(data.AuthorId || data.id);
         // If this story exists, prefill our cms forms with its data
         titleInput.val(data.title);
         bodyInput.val(data.body);
-        storyCategorySelect.val(data.category);
+        authorId = data.AuthorId || data.id;
         // If we have a story with this id, set a flag for us to know to update the story
         // when we hit submit
         updating = true;
@@ -68,155 +90,45 @@ $(document).ready(function() {
     });
   }
 
-  // Update a given story, bring user to the stories page when done
-  function updateStory(story) {
+  // A function to get Authors and then render our list of Authors
+  function getAuthors() {
+    $.get("/api/authors", renderAuthorList);
+  }
+  // Function to either render a list of authors, or if there are none, direct the user to the page
+  // to create an author first
+  function renderAuthorList(data) {
+    if (!data.length) {
+      window.location.href = "/authors";
+    }
+    $(".hidden").removeClass("hidden");
+    var rowsToAdd = [];
+    for (var i = 0; i < data.length; i++) {
+      rowsToAdd.push(createAuthorRow(data[i]));
+    }
+    authorSelect.empty();
+    console.log(rowsToAdd);
+    console.log(authorSelect);
+    authorSelect.append(rowsToAdd);
+    authorSelect.val(authorId);
+  }
+
+  // Creates the author options in the dropdown
+  function createAuthorRow(author) {
+    var listOption = $("<option>");
+    listOption.attr("value", author.id);
+    listOption.text(author.name);
+    return listOption;
+  }
+
+  // Update a given story, bring user to the story-index page when done
+  function updatePost(story) {
     $.ajax({
       method: "PUT",
-      url: "/api/stories",
+      url: "/api/story-index",
       data: story
     })
       .then(function() {
-        window.location.href = "/stories";
+        window.location.href = "/story-index";
       });
   }
-
-
-
-//Author logic
-
-// Getting jQuery references to the post body, title, form, and author select
-var bodyInput = $("#body");
-var titleInput = $("#title");
-var cmsForm = $("#cms");
-var authorSelect = $("#author");
-// Adding an event listener for when the form is submitted
-$(cmsForm).on("submit", handleFormSubmit);
-// Gets the part of the url that comes after the "?" (which we have if we're updating a post)
-var url = window.location.search;
-var postId;
-var authorId;
-// Sets a flag for whether or not we're updating a post to be false initially
-var updating = false;
-
-// If we have this section in our url, we pull out the post id from the url
-// In '?post_id=1', postId is 1
-if (url.indexOf("?post_id=") !== -1) {
-  postId = url.split("=")[1];
-  getPostData(postId, "post");
-}
-// Otherwise if we have an author_id in our url, preset the author select box to be our Author
-else if (url.indexOf("?author_id=") !== -1) {
-  authorId = url.split("=")[1];
-}
-
-// Getting the authors, and their posts
-getAuthors();
-
-// A function for handling what happens when the form to create a new post is submitted
-function handleFormSubmit(event) {
-  event.preventDefault();
-  // Wont submit the post if we are missing a body, title, or author
-  if (!titleInput.val().trim() || !bodyInput.val().trim() || !authorSelect.val()) {
-    return;
-  }
-  // Constructing a newPost object to hand to the database
-  var newPost = {
-    title: titleInput
-      .val()
-      .trim(),
-    body: bodyInput
-      .val()
-      .trim(),
-    AuthorId: authorSelect.val()
-  };
-
-  // If we're updating a post run updatePost to update a post
-  // Otherwise run submitPost to create a whole new post
-  if (updating) {
-    newPost.id = postId;
-    updatePost(newPost);
-  }
-  else {
-    submitPost(newPost);
-  }
-}
-
-// Submits a new post and brings user to blog page upon completion
-function submitPost(post) {
-  $.post("/api/posts", post, function() {
-    window.location.href = "/blog";
-  });
-}
-
-// Gets post data for the current post if we're editing, or if we're adding to an author's existing posts
-function getPostData(id, type) {
-  var queryUrl;
-  switch (type) {
-  case "post":
-    queryUrl = "/api/posts/" + id;
-    break;
-  case "author":
-    queryUrl = "/api/authors/" + id;
-    break;
-  default:
-    return;
-  }
-  $.get(queryUrl, function(data) {
-    if (data) {
-      console.log(data.AuthorId || data.id);
-      // If this post exists, prefill our cms forms with its data
-      titleInput.val(data.title);
-      bodyInput.val(data.body);
-      authorId = data.AuthorId || data.id;
-      // If we have a post with this id, set a flag for us to know to update the post
-      // when we hit submit
-      updating = true;
-    }
-  });
-}
-
-// A function to get Authors and then render our list of Authors
-function getAuthors() {
-  $.get("/api/authors", renderAuthorList);
-}
-// Function to either render a list of authors, or if there are none, direct the user to the page
-// to create an author first
-function renderAuthorList(data) {
-  if (!data.length) {
-    window.location.href = "/authors";
-  }
-  $(".hidden").removeClass("hidden");
-  var rowsToAdd = [];
-  for (var i = 0; i < data.length; i++) {
-    rowsToAdd.push(createAuthorRow(data[i]));
-  }
-  authorSelect.empty();
-  console.log(rowsToAdd);
-  console.log(authorSelect);
-  authorSelect.append(rowsToAdd);
-  authorSelect.val(authorId);
-}
-
-// Creates the author options in the dropdown
-function createAuthorRow(author) {
-  var listOption = $("<option>");
-  listOption.attr("value", author.id);
-  listOption.text(author.name);
-  return listOption;
-}
-
-// Update a given post, bring user to the blog page when done
-function updatePost(post) {
-  $.ajax({
-    method: "PUT",
-    url: "/api/posts",
-    data: post
-  })
-    .then(function() {
-      window.location.href = "/blog";
-    });
-}
-
-
-
 });
