@@ -38,7 +38,7 @@ $(document).ready(function() {
     newTr.data("author", authorData);
     newTr.append("<td>" + authorData.name + "</td>");
     newTr.append("<td> " + authorData.Stories.length + "</td>");
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Stories</a></td>");
+    newTr.append("<td><a href='/story-index?author_id=" + authorData.id + "'>Go to Stories</a></td>");
     newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Story</a></td>");
     newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
     return newTr;
