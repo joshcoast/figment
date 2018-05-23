@@ -26,28 +26,12 @@ var routes = require('./controllers/figment_controller.js');
 //use the var routes (express routes) when url returns /index
 app.use('/', routes);
 
-<<<<<<< HEAD
-// Routes
-// =============================================================
-require("./routes/story-routes.js")(app);
-require("./routes/author-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
-require("./routes/comment-routes.js")(app);
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-=======
 
 //syncing our sequlize models and then starting our express app
 db.sequelize.sync({force: true}).then(function(){
 	app.listen(PORT, function(){
 	console.log("listenning on http://localhost:" + PORT);
 });
->>>>>>> fd9e102baefa4225c0a952fe31ae2905a482571c
 });
 
 
