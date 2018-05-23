@@ -1,23 +1,19 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "dev_figment",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "w6e3eou8uhuch0ya",
-    "password": "jvan3za6rzb6p3sn",
-    "database": "t0a69e4y72f8qhje",
-    "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "use_env_variable": "JAWSDB_URL"
   }
 }

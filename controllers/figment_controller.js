@@ -14,10 +14,20 @@ var models = require('../models');
 // index route loads view.html
 router.get("/", function (req, res) {
   //retrieve all data from Stories and the authors from the Authors table
-	models.Story.findAll({
-		}).then(function(data){
+	models.Story.findAll({}).then(function(data){
 		var hbsObject = { story: data};
 		res.render('index', hbsObject);
+		}).catch(function(err){
+			console.log(err);
+		});
+});
+
+// index route loads view.html
+router.get("/cms", function (req, res) {
+  //retrieve all data from Stories and the authors from the Authors table
+	models.Story.findAll({include: [ 'Author']}).then(function(data){
+		var hbsObject = { story: data};
+		res.render('cms', hbsObject); //this is where you get the other HB "page"
 		}).catch(function(err){
 			console.log(err);
 		});
