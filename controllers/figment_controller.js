@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
-const strategy = require("../config/auth-config.js");
+const strategy = require("../public/js/auth-0-variables.js");
 const Auth0Strategy = require("passport-auth0"),
       passport = require("passport");
 
