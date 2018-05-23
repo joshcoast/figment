@@ -1,7 +1,6 @@
 {
   "name": "figment",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,5 +32,6 @@
     "passport-auth0": "^0.6.1",
     "sequelize": "^4.37.7",
     "showdown": "^1.8.6"
-  }
+  },
+  "description": ""
 }

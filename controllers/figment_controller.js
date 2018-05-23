@@ -3,6 +3,9 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
+const strategy = require("../config/auth-config.js");
+const Auth0Strategy = require("passport-auth0"),
+      passport = require("passport");
 
 
 // Express Routes
