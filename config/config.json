@@ -4,7 +4,10 @@
     "password": "root",
     "database": "dev_figment",
     "host": "127.0.0.1",
+<<<<<<< HEAD
     "port": 8889,
+=======
+>>>>>>> fd9e102baefa4225c0a952fe31ae2905a482571c
     "dialect": "mysql"
   },
   "test": {
@@ -15,10 +18,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "w6e3eou8uhuch0ya",
-    "password": "jvan3za6rzb6p3sn",
-    "database": "t0a69e4y72f8qhje",
-    "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
