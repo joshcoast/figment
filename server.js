@@ -30,6 +30,7 @@ app.use(express.static("public"));
 require("./routes/story-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/comment-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
