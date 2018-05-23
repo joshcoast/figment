@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
     });
 
     loginBtn.addEventListener('click', function (e) {
+        console.log("Clicked.")
         e.preventDefault();
         webAuth.authorize();
     });
