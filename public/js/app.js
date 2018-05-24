@@ -2,10 +2,10 @@ window.addEventListener('load', function () {
     var webAuth = new auth0.WebAuth({
         domain: 'patrickeast.auth0.com',
         clientID: 'OP2bjKo6nKUlhauwJAc0ILWuhUFAJI0l',
-        responseType: 'token id_token',
+        redirectUri: window.location.href,
         audience: 'https://patrickeast.auth0.com/userinfo',
+        responseType: 'token id_token',
         scope: 'openid',
-        redirectUri: window.location.href
     });
 
     var loginStatus = document.querySelector('.container h6');
