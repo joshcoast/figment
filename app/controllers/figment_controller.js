@@ -3,10 +3,6 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
-const strategy = require("../public/js/auth-0-variables.js");
-const Auth0Strategy = require("passport-auth0"),
-      passport = require("passport");
-
 
 // Express Routes
 // =============================================================
@@ -25,20 +21,6 @@ router.get("/", function (req, res) {
   });
 });
 
-
-router.get('/callback',
-  passport.authenticate('auth0', { failureRedirect: '/login' }),
-  (req, res) => {
-    if (!req.user) {
-      throw new Error('user null');
-    }
-    res.redirect("/");
-  }
-);
-
-router.get('/login', passport.authenticate('auth0', {}), (req, res) => {
-  res.redirect("/");
-});
 
 // Read route loads read.handlebars
 router.get("/read", function (req, res) {
