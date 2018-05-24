@@ -1,51 +1,51 @@
-<div class="container story">
-
-  <div class="row">
-
-    <div class="col-2">
-      <button id="btn-home-view" class="btn btn-primary">Home</button>
+<div class="navbar-fixed">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile" class="left hide-on-small-and-down">
+        <li>
+          <a id="btn-home-view" class="transparent btn-small">Home</a>
+        </li>
+        <li>
+          <a id="loginBtn" class="transparent btn-small">Log In</a>
+        </li>
+        <li>
+          <a id="logoutBtn" class="transparent btn-small">Log Out</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+</div>
 
-    <div class="col-2">
-      <button class="btn btn-primary" href="/cms">New Story</button>
-    </div>
+<h1 class="center homeText">Figment.Observer</h1>
 
-    <div class="col-2">
-      <button class="btn btn-primary" href="/authors">Manage Authors</button>
-    </div>
-
-    <div class="col-2">
-      <button id="loginBtn" class="btn btn-primary">Log In</button>
-    </div>
-
-    <div class="col-2">
-      <button id="logoutBtn" class="btn btn-primary">Log Out</button>
-    </div>
-
-  </div>
-
+<div class="container">
   <div class="row">
     <div class="container">
-      <h4></h4>
+      <h6 class="center white-text"></h6>
     </div>
   </div>
-  
-</div>
-
-<div class="row">
-  <div class="col-md-12 story-container">
-    <ul class="list-group">
-      {{#each story}}
-      <li class="list-group-item">
-        <p>{{this.id}}.
-          <strong>{{this.title}}</strong>
-        </p>
-        <p>{{this.body}}</p>
-      </li>
-      {{/each}}
-    </ul>
+  {{!-- Don't need on Home Page, but save for interior page. --}} {{!--
+  <div class="col-3">
+    <button class="waves-effect waves-blue black-text blue lighten-4 btn-small" href="/cms">New Story</button>
   </div>
-</div>
+  <div class="col-3">
+    <button class="waves-effect waves-blue black-text blue lighten-4 btn-small" href="/authors">Manage Authors</button>
+  </div> --}}
+
+  <div class="row">
+    <div class="col-md-12 story-container">
+      <ul class="list-group">
+        {{#each story}}
+        <li class="list-group-item">
+          <p>{{this.id}}.
+            <strong>{{this.title}}</strong>
+          </p>
+          <p>{{this.body}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
 </div>
 

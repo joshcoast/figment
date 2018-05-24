@@ -45,3 +45,26 @@ button.edit {
 .top-30 {
   margin-top: 30px;
 }
+
+html, body {
+  background: linear-gradient(#206188 32.65% , #72c4cc 100%);
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'PT Mono', monospace;
+}
+
+.homeText {
+  font-family: 'PT Mono', monospace;
+  color: #ffecde;
+}
+
+.nav-wrapper {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+li a {
+  color: #ffecde;
+}
