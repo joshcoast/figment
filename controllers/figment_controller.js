@@ -82,4 +82,32 @@ router.get("/cms", function (req, res) {
 // });
 
 //export router to be required in server.js
+
+
+
+// Choice Landing Page route
+router.get("/choice", function (req, res) {
+	models.Story.findAll({}).then(function(data){
+		var hbsObject = { story: data};
+		res.render('choice', hbsObject);
+		}).catch(function(err){
+			console.log(err);
+		});
+});
+
+
+router.get("/write", function (req, res) {
+	models.Story.findAll({}).then(function(data){
+		var hbsObject = { story: data};
+		res.render('write', hbsObject);
+		}).catch(function(err){
+			console.log(err);
+		});
+});
+
+
+
+
+
+
 module.exports = router;
