@@ -1,7 +1,6 @@
 {
   "name": "figment",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/joshcoast/figment#readme",
   "dependencies": {
+    "auth0-js": "^9.5.1",
     "body-parser": "^1.18.3",
     "chai": "^4.1.2",
     "express": "^4.16.3",
@@ -30,8 +30,10 @@
     "mysql2": "^1.5.3",
     "nightmare": "^3.0.1",
     "npm-expansions": "^2.2.4",
+    "passport": "^0.4.0",
     "passport-auth0": "^0.6.1",
     "sequelize": "^4.37.7",
     "showdown": "^1.8.6"
-  }
+  },
+  "description": ""
 }
