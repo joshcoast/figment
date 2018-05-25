@@ -4,7 +4,7 @@ $(document).ready(function() {
   var titleInput = $("#storyTitle");
   var storyForm = $("#storyForm");
   // Adding an event listener for when the form is submitted
-  $(cmsForm).on("submit", handleFormSubmit);
+  // $(cmsForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a story)
   var url = window.location.search;
   var storyId;
