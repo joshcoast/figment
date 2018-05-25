@@ -6,23 +6,29 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const env = require('dotenv').load()
 const exphbs = require('express-handlebars')
+const path = require('path');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
-
-//For Handlebars
-app.set('views', './app/views')
-app.engine('hbs', exphbs({
-	extname: '.hbs',
-	defaultLayout: 'main'
-}));
-app.set('view engine', '.hbs');
 
 //For BodyParser
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(bodyParser.json());
+
+//For Handlebars
+// var directorViews = path.join(__dirname, "views");
+// var currentWo = process.cwd() + "/app/views";
+// app.set('views', currentWo)
+app.engine('hbs', exphbs({
+	extname: '.hbs',
+	defaultLayout: 'main'
+}));
+// app.set('view engine', 'hbs');
+app.set("views", path.join(__dirname, "./app/views"));
+app.set("view engine", "hbs");
+
 
 
 // For Passport
