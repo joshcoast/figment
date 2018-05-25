@@ -25,7 +25,7 @@ router.get("/", function (req, res) {
 
 // Read route loads read.handlebars
 router.get("/read", function (req, res) {
-  //retrieve all data from Stories TODO: add the join to authors
+ // retrieve all data from Stories TODO: add the join to authors
 	models.Story.findAll({}).then(function(data){
 		var hbsObject = { story: data};
 		res.render('read', hbsObject);
@@ -50,19 +50,19 @@ router.get("/cms", function (req, res) {
 
 
 // // cms route loads cms.html
-// app.get("/cms", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/cms.html"));
+// router.get("/cms", function(req, res) {
+  // res.sendFile(path.join(__dirname, "../public/cms.html"));
 // });
 
 // // blog route loads blog.html
-// app.get("/story-index", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/story-index.html"));
-// });
+ //router.get("/story-index", function(req, res) {
+   //res.sendFile(path.join(__dirname, "../public/story-index.html"));
+ //});
 
 // // authors route loads author-manager.html
-// app.get("/authors", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-// });
+ //router.get("/authors", function(req, res) {
+   //res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+ //});
 
 //export router to be required in server.js
 
@@ -89,7 +89,106 @@ router.get("/write", function (req, res) {
 });
 
 
+router.get("/api/story-index", function(req, res) {
+	var query = {};
+	if (req.query.author_id) {
+		query.AuthorId = req.query.author_id;
+	}
+	// Here we add an "include" property to our options in our findAll query
+	// We set the value to an array of the models we want to include in a left outer join
+	// In this case, just db.Author
+	models.Story.findAll({
+		where: query,
+		include: [models.Author]
+	}).then(function(dbStory) {
+		res.json(dbStory);
+	});
+});
 
+router.get("/api/story-index/:id", function(req, res) {
+	// Here we add an "include" property to our options in our findOne query
+	// We set the value to an array of the models we want to include in a left outer join
+	// In this case, just db.Author
+	models.Story.findOne({
+		where: {
+			id: req.params.id
+		},
+		include: [models.Author]
+	}).then(function(dbStory) {
+		res.json(dbStory);
+	});
+});
+
+router.post("/api/story-index", function(req, res) {
+	models.Story.create(req.body).then(function(dbStory) {
+		res.json(dbStory);
+	});
+});
+
+// DELETE route for deleting stories
+router.delete("/api/story-index/:id", function(req, res) {
+	models.Story.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(function(dbStory) {
+		res.json(dbStory);
+	});
+});
+
+// PUT route for updating stories
+router.put("/api/story-index", function(req, res) {
+	models.Story.update(
+		req.body,
+		{
+			where: {
+				id: req.body.id
+			}
+		}).then(function(dbStory) {
+		res.json(dbStory);
+	});
+});
+
+router.get("/api/authors", function(req, res) {
+	// Here we add an "include" property to our options in our findAll query
+	// We set the value to an array of the models we want to include in a left outer join
+	// In this case, just db.Story
+	models.Author.findAll({
+		include: [models.Story]
+	}).then(function(dbAuthor) {
+		res.json(dbAuthor);
+	});
+});
+
+router.get("/api/authors/:id", function(req, res) {
+	// Here we add an "include" property to our options in our findOne query
+	// We set the value to an array of the models we want to include in a left outer join
+	// In this case, just db.Story
+	models.Author.findOne({
+		where: {
+			id: req.params.id
+		},
+		include: [models.Story]
+	}).then(function(dbAuthor) {
+		res.json(dbAuthor);
+	});
+});
+
+router.post("/api/authors", function(req, res) {
+	models.Author.create(req.body).then(function(dbAuthor) {
+		res.json(dbAuthor);
+	});
+});
+
+router.delete("/api/authors/:id", function(req, res) {
+	models.Author.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(function(dbAuthor) {
+		res.json(dbAuthor);
+	});
+});
 
 
 
