@@ -8,6 +8,7 @@ var models = require('../models');
 // =============================================================
 
 
+
 // Each of the below routes just handles the HTML page that the user gets sent to.
 
 // index route loads view.html
@@ -79,14 +80,18 @@ router.get("/choice", function (req, res) {
 });
 
 
-router.get("/write", function (req, res) {
+router.get("/write/", function (req, res) {
 	models.Story.findAll({}).then(function(data){
-		var hbsObject = { story: data};
+		var hbsObject = { story: data, user: req.user};
 		res.render('write', hbsObject);
 		}).catch(function(err){
 			console.log(err);
 		});
 });
+
+router.get("/public/js/write.js"), function (req,res) {
+  res.render('/public/js/write.js');
+}
 
 
 router.get("/api/story-index", function(req, res) {
