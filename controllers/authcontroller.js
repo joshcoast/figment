@@ -9,7 +9,7 @@ exports.signin = (req, res) => {
 }
  
 exports.choice = (req, res) => {
-    res.render('choice');
+    res.render('choice', {user: req.user});
 }
 
 exports.logout = (req, res) => {

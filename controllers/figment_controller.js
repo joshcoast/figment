@@ -12,6 +12,7 @@ var models = require('../models');
 
 // index route loads view.html
 router.get("/", function (req, res) {
+	console.log('user', req.user);
   //retrieve all data from Stories and the authors from the Authors table
   models.Story.findAll({}).then(function (data) {
     var hbsObject = { story: data };
