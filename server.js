@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const express = require('express')
 const app = express()
 const passport = require('passport')
@@ -17,20 +17,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-//For Handlebars
-// var directorViews = path.join(__dirname, "views");
-// var currentWo = process.cwd() + "/app/views";
-// app.set('views', currentWo)
-app.engine('hbs', exphbs({
-	extname: '.hbs',
-	defaultLayout: 'main'
-}));
-// app.set('view engine', 'hbs');
-app.set("views", path.join(__dirname, "./app/views"));
-app.set("view engine", "hbs");
-
-
-
 // For Passport
 app.use(session({
 	secret: 'keyboard cat',
@@ -40,17 +26,25 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+//For Handlebars
+app.set('views', './views')
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+
+
 //Models
-const models = require("./app/models");
+const models = require("./models");
 
 //Routes
-const authRoute = require('./app/routes/auth.js')(app, passport);
+const authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
-require('./app/config/passport.js')(passport, models.user);
+require('./config/passport.js')(passport, models.user);
 
 //require the express routes from partials controller-block to set variable routes
-var routes = require('./app/controllers/figment_controller.js');
+var routes = require('./controllers/figment_controller.js');
 //use the var routes (express routes) when url returns /index
 app.use('/', routes);
 
