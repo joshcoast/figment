@@ -21,5 +21,6 @@ CREATE TABLE Stories
         title VARCHAR (255) NOT NULL,
         description VARCHAR (255) NOT NULL,
         genre VARCHAR (255) NOT NULL,
+        body MEDIUMTEXT NOT NULL,
         PRIMARY KEY (id)
     );
