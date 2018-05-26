@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS dev_figment;
+DROP DATABASE IF EXISTS figment_db;
 
-CREATE DATABASE dev_figment;
+CREATE DATABASE figment_db;
 
-USE dev_figment;
+USE figment_db;
 
 CREATE TABLE Authors
     (   
