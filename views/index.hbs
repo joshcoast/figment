@@ -15,8 +15,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="container">
-      <h1 class="center homeText">Figment.Observer</h1>
+    <div id="homeTitle" class="container">
+      <h1 class="center homeText">Figment.observer</h1>
     </div>
   </div>
 </div>
@@ -46,6 +46,20 @@
 </div>
 
 <!-- Custom Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> {{!--
-<script src="../public/js/story-index.js" type="text/javascript"></script> --}}
-<script type="application/javascript" src="/js/app.js"></script>
+<script>
+  $(document).ready(function () {
+    var txt = 'Figment.observer';
+    var speed = 150;
+
+    function typeWriter() {
+      for (let i = 0; i < txt.length; i++) {
+        $("#homeTitle").innerHTML += txt.charAt(i);
+        setTimeout(typeWriter, speed);
+      };
+    };
+    console.log("running.");
+    typeWriter();
+  })
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>

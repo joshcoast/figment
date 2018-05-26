@@ -48,7 +48,7 @@ button.edit {
 
 html, body {
   background: linear-gradient(#206188 32.65% , #72c4cc 100%);
-  background-repeat: no-repeat;
+  background-size: contain;
   height: 100%;
 }
 
