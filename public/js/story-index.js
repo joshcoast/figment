@@ -1,6 +1,8 @@
 $(document).ready(function() {
   /* global moment */
 
+
+/*
   // storyindexContainer holds all of our stories
   var storyindexContainer = $(".story-container");
   var storyCategorySelect = $("#category");
@@ -137,5 +139,6 @@ $(document).ready(function() {
     "'>here</a> in order to get started.");
     storyindexContainer.append(messageH2);
   }
+*/
 
 });

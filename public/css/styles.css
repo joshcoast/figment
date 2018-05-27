@@ -90,6 +90,7 @@ li a {
   color: #ffecde;
 }
 
+<<<<<<< HEAD
 .choices {
 font-family: 'PT Mono', monospace;
 text-align: center;
@@ -115,4 +116,8 @@ transition:.25s;
   padding: 0px;
   overflow: hidden;
   margin-bottom: 5%;
+=======
+#genres {
+  display: none;
+>>>>>>> a187f59d9f36d060d957e999ea2c59ffa6fa7250
 }
