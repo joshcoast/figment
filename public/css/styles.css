@@ -68,3 +68,7 @@ h1 {
 li a {
   color: #ffecde;
 }
+
+#genres {
+  display: none;
+}
