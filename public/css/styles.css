@@ -46,15 +46,15 @@ button.edit {
   margin-top: 30px;
 }
 
-.mainbody {
+html, mainbody {
   background-image: linear-gradient(#206188 32.65% , #72c4cc 100%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-  padding-bottom: 200px;
+
 
 }
-  body:before, body:after {
+html:before, body:after {
     content: "";
     position: fixed;
     background: #206188;
@@ -62,13 +62,13 @@ button.edit {
     right: 0;
     height: 10px;
 }
-body:before {
+html:before {
     top: 0;
 }
 body:after {
     bottom: 0;
 }
-body {
+html {
     border-left: 10px solid #206188;
     border-right: 10px solid #206188;  
 }
@@ -90,7 +90,6 @@ li a {
   color: #ffecde;
 }
 
-<<<<<<< HEAD
 .choices {
 font-family: 'PT Mono', monospace;
 text-align: center;
@@ -116,8 +115,10 @@ transition:.25s;
   padding: 0px;
   overflow: hidden;
   margin-bottom: 5%;
-=======
+}
 #genres {
   display: none;
->>>>>>> a187f59d9f36d060d957e999ea2c59ffa6fa7250
+}
+.container {
+  height: 100%;
 }
