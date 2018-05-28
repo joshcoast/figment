@@ -1,7 +1,8 @@
 <div class="navbar-fixed">
     <nav class="transparent z-depth-0">
         <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-small-and-down">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger "><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down" >
                 <li>
                     <a href="#" id="btn-home-view" class="transparent btn-small">Home</a>
                 </li>
@@ -12,6 +13,14 @@
         </div>
     </nav>
 </div>
+  <ul class="sidenav" id="mobile-demo">
+                <li>
+                    <a href="#" id="btn-home-view" class="">Home</a>
+                </li>
+                <li>
+                    <a href="/logout" id="logoutBtn" class="">Log Out</a>
+                </li>
+  </ul>
 
 <div class="container">
     <div class="row">
@@ -22,26 +31,30 @@
     <div class="row">
         <div class="col s12">
             <div class="white-text center box">
-                <h4 class=" " id="userName">Hi {{user.firstname}}. Welcome to a new blogging experience.</h4><h3><strong> Are you here to:</strong></h3>
+                <h5 class=" " id="userName">Hi {{user.firstname}}. Welcome to a new blogging experience.</h5><h3><strong> Are you here to:</strong></h3>
             </div>
         </div>
     </div>
     <div class="row">
 
-                <div class="col s12 m6 choice">
+                <div class="col s12 m5">
                     <div class="choices">
                        
                         <a href="/read"> 
-                            <img src="images/reader1-01.png">  
+                            <img class="choiceimg" src="images/reader1-01.png">  
                         </a>
                         <h3>read</h3>
                          
                     </div>
+                    
                 </div>
-                <div class="col s12 m6">
+                <div class="col s12 m2 choice">
+                    <div class ="vertical_line"></div>
+                </div>
+                <div class="col s12 m5">
                     <div class="choices">                              
                         <a href="/write"> 
-                            <img src="images/writer-02.png">
+                            <img class="choiceimg" src="images/writer-02.png">
                         </a>
                         <h3>write</h3>
                     </div>
@@ -53,11 +66,7 @@
 
 
 <script>
-  $(document).ready(function () {
-    $(".choices").hover(function(){
-        $(this).parent(body).css('background-color','red');
-    });
-  });
+
 </script>
 
 <!-- Custom Script -->

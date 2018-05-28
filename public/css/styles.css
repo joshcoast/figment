@@ -45,41 +45,23 @@ button.edit {
 .top-30 {
   margin-top: 30px;
 }
-
-html, mainbody {
-  background-image: linear-gradient(#206188 32.65% , #72c4cc 100%);
+html, .mainbody {
+  background: linear-gradient(#206188 32.65% , #72c4cc 100%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
 
-
-}
-html:before, body:after {
-    content: "";
-    position: fixed;
-    background: #206188;
-    left: 0;
-    right: 0;
-    height: 10px;
-}
-html:before {
-    top: 0;
-}
-body:after {
-    bottom: 0;
-}
-html {
-    border-left: 10px solid #206188;
-    border-right: 10px solid #206188;  
 }
 
 h1 {
   font-family: 'PT Mono', monospace;
+  font-size: calc(1em + 5vmin);
 }
 
 .homeText {
   font-family: 'PT Mono', monospace;
   color: #ffecde;
+  size: 50px
 }
 
 .nav-wrapper {
@@ -94,19 +76,22 @@ li a {
 font-family: 'PT Mono', monospace;
 text-align: center;
 color: #FFF5EE;
-transition:.25s;
-
 }
-.choice {
-  border-right: 1px solid white;
+.choiceimg  {
+  transition:.25s;
+  width: 80%;
+  max-width: 250px;
 }
-.choices:hover  {
+.choiceimg:hover   {
   margin:-10px 0 0 0;
 }
-.choices-child:hover ~  {
-  background: linear-gradient(orange 32.65% , yellow 100%);
-  background-size: cover;
-  height: 100%;
+.choice {
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+}
+.choice:last-child {
+  border-right: 0px;
 }
 .box {
   border: none;
@@ -119,6 +104,12 @@ transition:.25s;
 #genres {
   display: none;
 }
-.container {
-  height: 100%;
+
+
+.vertical_line {
+  height:250px; 
+  width:1px;
+  background:white;
+  margin-left: auto ;
+  margin-right: auto ;
 }
