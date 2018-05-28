@@ -1,45 +1,56 @@
-module.exports = function(sequelize, Sequelize) {
- 
-    let User = sequelize.define('user', {
- 
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
- 
-        firstname: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        },
- 
-        lastname: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        },
- 
-        email: {
-            type: Sequelize.STRING,
-            validate: {
-                isEmail: true
-            }
-        },
- 
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
- 
-        last_login: {
-            type: Sequelize.DATE
-        },
- 
-        status: {
-            type: Sequelize.ENUM('active', 'inactive'),
-            defaultValue: 'active'
-        }
-    });
- 
-    return User;
- 
+module.exports = function (sequelize, DataTypes) {
+
+  let User = sequelize.define('user', {
+
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
+    },
+
+    firstname: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+
+    lastname: {
+      type: DataTypes.STRING,
+      notEmpty: true
+    },
+
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true
+      }
+    },
+
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    last_login: {
+      type: DataTypes.DATE
+    },
+
+    status: {
+      type: DataTypes.ENUM('active', 'inactive'),
+      defaultValue: 'active'
+    }
+  }, {
+    underscored: true
+  });
+
+  // User.associate = function(models) {
+  //   // Associating User with Stories
+  //   // When a User is deleted, also delete any associated Stories
+  //   User.hasMany(models.Story, {
+  //     onDelete: "cascade"
+  //   });
+  // };
+
+  return User;
+
 }
