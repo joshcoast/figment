@@ -44,6 +44,19 @@ router.get("/write/", function (req, res) {
   });
 });
 
+// Read
+router.get("/read", function (req, res) {
+  // retrieve all data from Stories TODO: add the join to authors
+  models.Story.findAll({}).then(function (data) {
+    var hbsObject = {
+      story: data
+    };
+    res.render('read', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
 
 // --- APIs --- //
 
