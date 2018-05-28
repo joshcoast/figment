@@ -47,7 +47,7 @@ router.get("/write/", function (req, res) {
 // Read
 router.get("/read", function (req, res) {
   // retrieve all data from Stories TODO: add the join to authors
-  models.Story.findAll({}).then(function (data) {
+  db.story.findAll({}).then(function (data) {
     var hbsObject = {
       story: data
     };
@@ -69,7 +69,7 @@ router.get("/api/story-index", function (req, res) {
   }
   db.story.findAll({
     where: query,
-    include: [db.user]
+    //include: [db.user]
   }).then(function (dbStory) {
     res.json(dbStory);
   });
@@ -97,6 +97,15 @@ router.get("/api/authors/:id", function (req, res) {
       id: req.params.id
     },
     include: [db.story]
+  }).then(function (dbAuthor) {
+    res.json(dbAuthor);
+  });
+});
+
+router.post("/api/:user_id/write", function (req, res) {
+  db.user.findOne({
+    where: { id: user_id },
+
   }).then(function (dbAuthor) {
     res.json(dbAuthor);
   });
