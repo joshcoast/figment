@@ -21,19 +21,32 @@
     <h1 class="center homeText">Figment.Observer</h1>
   </div>
 </div>
-
-
+<div id="menu">
+  <h4>Sort by:</h4>
+  <p id="genre">Genre</p>
+  <p>Most Popular</p>
+  <p>Most Recent</p>
+</div>
+<ul id="genres">
+  <li id="humor">Humor</li>
+  <li id="mystery">Mystery</li>
+  <li id="romance">Romance</li>
+  <li id="scifi">Sci-Fi</li>
+</ul>
+<button id="close">Exit</button>
 <div class="container story">
   <div class="row"></div>
   <div class="row">
     <div class="col-md-12 story-container">
       <ul class="list-group">
         {{#each story}}
+        
         <li class="list-group-item">
-          <p>{{this.id}}.
+          <p class="index">{{this.id}}.
             <strong>{{this.title}}</strong>
           </p>
-          <p>{{this.body}}</p>
+          <p class="body">{{this.body}}</p>
+          <p class="type">{{this.genre}}</p>
         </li>
         {{/each}}
       </ul>
@@ -41,7 +54,93 @@
   </div>
 </div>
 
-<!-- Custom Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> {{!--
-<script src="../public/js/story-index.js" type="text/javascript"></script> --}}
-<script type="application/javascript" src="/js/app.js" type="text/javascript"></script>
+<!-- Custom Script 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="../public/js/story-index.js" type="text/javascript"></script> -->
+<script>
+
+
+  $("#genre").on("click", genre);
+  $(".index").on("click", readersChoice);
+  $("#humor").on("click", humor);
+  $("#mystery").on("click", mystery);
+  $("#romance").on("click", romance);
+  $("#scifi").on("click", scifi);
+  $("#close").on("click", close);
+  
+
+
+  function genre() {
+    $("#genres").css("display", "block");
+  }
+
+function classify(x) {
+  for (i = 0; i < $(".type").length; i++) {
+    if ($(".type")[i].innerHTML == x) {
+
+$(".type")[i].parentElement.classList.add(x);
+    }
+      
+  }
+}  
+
+function readersChoice() {
+  //window.location.assign("../body")
+  $(this).next('.body').css("display", "block");
+  $(".type").css("display", "none");
+  $(".index").css("display", "none");
+  $("#close").css("display", "block");
+  
+
+}
+
+
+function humor() {
+  $(".humor").css("display", "block");
+  $(".mystery").css("display", "none");
+  $(".romance").css("display", "none");
+  $(".sci-fi").css("display", "none");
+  
+}
+
+function mystery() {
+  $(".mystery").css("display", "block");
+  $(".humor").css("display", "none");
+  $(".romance").css("display", "none");
+  $(".sci-fi").css("display", "none");
+  
+}
+
+function romance() {
+  $(".romance").css("display", "block");
+  $(".mystery").css("display", "none");
+  $(".humor").css("display", "none");
+  $(".sci-fi").css("display", "none");
+  
+}
+
+function scifi() {
+  $(".sci-fi").css("display", "block");
+  $(".mystery").css("display", "none");
+  $(".romance").css("display", "none");
+  $(".humor").css("display", "none");
+  
+}
+
+function close() {
+  $("#close").css("display", "none");
+  $(".index").css("display", "block");
+  $(".type").css("display", "block");
+  $(".body").css("display", "none");
+}
+
+
+classify("humor");
+classify("mystery");
+classify("romance");
+classify("sci-fi");
+
+
+
+</script>

@@ -93,6 +93,16 @@ router.get("/public/js/write.js"), function (req,res) {
   res.render('/public/js/write.js');
 }
 
+router.get("/body/", function (req, res) {
+	models.Story.findAll({}).then(function(data){
+		var hbsObject = { story: data, user: req.user};
+		res.render('body', hbsObject);
+		console.log(hbsObject);
+		}).catch(function(err){
+			console.log(err);
+		});
+});
+
 
 router.get("/api/story-index", function(req, res) {
 	var query = {};

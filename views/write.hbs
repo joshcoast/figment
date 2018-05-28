@@ -6,6 +6,9 @@
           <a href="/choice" id="btn-home-view" class="transparent btn-small">Home</a>
         </li>
         <li>
+          <a href="/read" class="transparent btn-small">Read</a>
+        </li>
+        <li>
           <a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a>
         </li>
       </ul>
@@ -17,50 +20,64 @@
   <div class="row">
     <h1 class="center homeText">Figment.Observer</h1>
   </div>
-</div>
-
-<div class="container">
-  <div class="card transparent hoverable center">
-    <span class="card-text homeText">Hello {{user.firstname}} {{user.lastname}}</span>
-    <form id="storyForm" data-userId="{{user.id}}">
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="storyTitle" type="text" class="validate">
-          <label class="active white-text" for="story-title">Story Title</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="storyDescription" type="text" class="validate" data-length="240">
-          <label class="active white-text" for="story-title">Description</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="storyGenre" type="text" class="validate">
-          <label class="active white-text" for="story-title">Genre</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="body" class="materialize-textarea"></textarea>
-          <label for="storyBody" class="white-text">The Story</label>
-          {{!--
-          <span class="helper-text homeText white-text" data-error="wrong" data-success="right">Your time to shine.</span> --}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="center">
-          <input id="submit" type="submit" value="Submit" class="white-text btn-small waves-effect white">
-        </div>
-      </div>
-      <br>
-    </form>
   </div>
-</div>
+
+  <div class="container">
+    <div class="card transparent hoverable center">
+      <span class="card-text homeText">This is your moment, {{user.firstname}}.</span>
+      <form id="storyForm" data-userId="{{user.id}}">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="storyTitle" type="text" class="validate amber-text text-lighten-5">
+            <label class="active amber-text text-lighten-5 homeText" for="story-title">Story Title</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="storyDescription" type="text" class="validate amber-text text-lighten-5" data-length="240">
+            <label class="active amber-text text-lighten-5 homeText" for="story-title">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <select>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Horror</option>
+              <option value="2">Mystery</option>
+              <option value="3">Adventure</option>
+              <option value="3">Sci-Fi</option>
+            </select>
+            <label class="active amber-text text-lighten-5 homeText" for="story-title">Genre</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="body" class="materialize-textarea amber-text text-lighten-5"></textarea>
+            <label for="storyBody" class="amber-text text-lighten-5 homeText">The Story</label>
+            {{!--
+            <span class="helper-text homeText deep-orange lighten-4" data-error="wrong" data-success="right">Your time to shine.</span> --}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="center">
+            <input id="submit" type="submit" value="Submit" class="btn-small waves-effect white">
+          </div>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
 
 
 
 
-<!-- Custom Script -->
-<script src="/js/write.js" type="text/javascript"></script>
+  <!-- Custom Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/write.js" type="text/javascript"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+  </script>
