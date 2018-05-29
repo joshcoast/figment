@@ -1,26 +1,4 @@
-<div class="navbar-fixed">
-    <nav class="transparent z-depth-0">
-        <div class="nav-wrapper">
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger "><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down" >
-                <li>
-                    <a href="#" id="btn-home-view" class="transparent btn-small">Home</a>
-                </li>
-                <li>
-                    <a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-  <ul class="sidenav" id="mobile-demo">
-                <li>
-                    <a href="#" id="btn-home-view" class="">Home</a>
-                </li>
-                <li>
-                    <a href="/logout" id="logoutBtn" class="">Log Out</a>
-                </li>
-  </ul>
+
 
 <div class="container">
     <div class="row">
@@ -48,8 +26,8 @@
                     </div>
                     
                 </div>
-                <div class="col s12 m2 choice">
-                    <div class ="vertical_line"></div>
+                <div class="col s12 m2 choice ">
+                    <div class ="vertical_line hide-on-small-only"></div>
                 </div>
                 <div class="col s12 m5">
                     <div class="choices">                              
@@ -66,10 +44,11 @@
 
 
 <script>
-
+if ((window.location.pathname)==="/choice"){
+console.log("it is")
+}
 </script>
 
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> {{!--
 <script src="../public/js/story-index.js" type="text/javascript"></script> --}}
-<script type="application/javascript" src="/js/choice.js" type="text/javascript"></script>
