@@ -100,15 +100,4 @@ vertical-align: middle;
   overflow: hidden;
   margin-bottom: 5%;
 }
-#genres {
-  display: none;
-}
 
-
-.vertical_line {
-  height:250px; 
-  width:1px;
-  background:white;
-  margin-left: auto ;
-  margin-right: auto ;
-}

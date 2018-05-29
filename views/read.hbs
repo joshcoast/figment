@@ -15,7 +15,7 @@
   <li id="romance">Romance</li>
   <li id="scifi">Sci-Fi</li>
 </ul>
-
+<button id="close">Exit</button>
 <div class="container story">
   <div class="row"></div>
   <div class="row">
@@ -27,7 +27,7 @@
           <p class="index">{{this.id}}.
             <strong>{{this.title}}</strong>
           </p>
-          
+          <p class="body">{{this.body}}</p>
           <p class="type">{{this.genre}}</p>
         </li>
         {{/each}}
@@ -49,6 +49,7 @@
   $("#mystery").on("click", mystery);
   $("#romance").on("click", romance);
   $("#scifi").on("click", scifi);
+  $("#close").on("click", close);
   
 
 
@@ -67,8 +68,15 @@ $(".type")[i].parentElement.classList.add(x);
 }  
 
 function readersChoice() {
-  window.location.assign("../body")
+  //window.location.assign("../body")
+  $(this).next('.body').css("display", "block");
+  $(".type").css("display", "none");
+  $(".index").css("display", "none");
+  $("#close").css("display", "block");
+  
+
 }
+
 
 function humor() {
   $(".humor").css("display", "block");
@@ -100,6 +108,13 @@ function scifi() {
   $(".romance").css("display", "none");
   $(".humor").css("display", "none");
   
+}
+
+function close() {
+  $("#close").css("display", "none");
+  $(".index").css("display", "block");
+  $(".type").css("display", "block");
+  $(".body").css("display", "none");
 }
 
 
