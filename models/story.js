@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 
     genre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }

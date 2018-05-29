@@ -9,10 +9,10 @@ $(document).ready(function() {
   console.log(currentUser);
 
  let storyData = {
-   title: storyTitle,
-   genre: storyGenre,
-   description: storyDescription,
-   body: storyBody,
+   title: $("#storyTitle").val(),
+   genre: $("#storyGenre").val(),
+   description: $("#storyDescription").val(),
+   body: $("#storyBody").val(),
    user_id: currentUser
   };
 
