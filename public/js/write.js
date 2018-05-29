@@ -9,12 +9,12 @@ $(document).ready(function() {
   console.log(currentUser);
 
  let storyData = {
-   title: currentUser,
+   title: "default Title",
    genre: "default genre",
    description: "default description",
-   body: "default body"
+   body: "default body",
+   user_id: currentUser
   };
-
 
   $("#submit").on("click", function(event) {
     $.post("/api/story-index", storyData)
@@ -25,10 +25,7 @@ $(document).ready(function() {
     console.log("ran");
   }
 
-
-
-
-
+  
 //   // Submits a new story and brings user to story-index page upon completion
 //   function submitPost(story) {
 //     $.post("/api/story-index", story, function() {
