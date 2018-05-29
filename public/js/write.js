@@ -9,10 +9,10 @@ $(document).ready(function() {
   console.log(currentUser);
 
  let storyData = {
-   title: "default Title",
-   genre: "default genre",
-   description: "default description",
-   body: "default body",
+   title: storyTitle,
+   genre: storyGenre,
+   description: storyDescription,
+   body: storyBody,
    user_id: currentUser
   };
 
