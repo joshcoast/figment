@@ -45,11 +45,14 @@ button.edit {
 .top-30 {
   margin-top: 30px;
 }
-html, .mainbody {
+html {
+  height: 100vh;
+}
+
+.mainbody {
   background: linear-gradient(#206188 32.65% , #72c4cc 100%);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 h1 {
@@ -101,3 +104,26 @@ vertical-align: middle;
   margin-bottom: 5%;
 }
 
+.vertical-line {
+  height: 250px;
+  width: 1px;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#genres {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+/* Added just for demo */
+.bgImage {
+  background-image: url("../images/samplebg.png");
+  background-repeat: no-repeat;
+  height: 901px;
+  width: 781px;
+}
