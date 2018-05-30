@@ -69,7 +69,7 @@ router.get("/api/story-index", function (req, res) {
   }
   db.Story.findAll({
     where: query,
-    include: [models.Author]
+    include: [db.user]
   }).then(function (dbStory) {
     res.json(dbStory);
   });
@@ -83,7 +83,7 @@ router.get("/api/comments", function (req, res) {
   // Here we add an "include" property to our options in our findAll query
   // We set the value to an array of the models we want to include in a left outer join
   // In this case, just db.Author
-  models.Comment.findAll({
+  db.Comment.findAll({
     where: query
     
   }).then(function (dbStory) {
@@ -92,7 +92,7 @@ router.get("/api/comments", function (req, res) {
 });
 
 router.post("/api/comments", function (req, res) {
-  models.Comment.create(req.body).then(function (dbStory) {
+  db.Comment.create(req.body).then(function (dbStory) {
     res.json(dbStory);
   });
 });
@@ -101,11 +101,11 @@ router.get("/api/story-index/:id", function (req, res) {
   // Here we add an "include" property to our options in our findOne query
   // We set the value to an array of the models we want to include in a left outer join
   // In this case, just db.Author
-  models.Story.findOne({
+  db.Story.findOne({
     where: {
       id: req.params.id
     },
-    include: [models.Author]
+    include: [db.user]
   }).then(function (dbStory) {
     res.json(dbStory);
   });
