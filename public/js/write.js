@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('select').formSelect();
 
   var currentUser = $('#storyForm').data( "userid" );
 
@@ -6,7 +7,7 @@ $(document).ready(function() {
 
     const storyTitle = $( "#storyTitle" ).val();
     const storyDescription = $( "#storyDescription" ).val();
-    const storyGenre = $( "#storyGenre" ).val();
+    const storyGenre = $( "#genreChoices" ).val();
     const storyBody = $( "#storyBody" ).val();
 
     let storyData = {
