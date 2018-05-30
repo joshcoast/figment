@@ -120,10 +120,17 @@ vertical-align: middle;
   display: none;
 }
 
-/* Added just for demo */
-.bgImage {
-  background-image: url("../images/samplebg.png");
-  background-repeat: no-repeat;
-  height: 901px;
-  width: 781px;
+#comment {
+  display: none;
+}
+
+#commentA {
+  background-color: white;
+  margin: 0 auto;
+  height: 150px;
+  width: 60%;
+}
+
+#genreChoices {
+  display: none;
 }

@@ -22,14 +22,15 @@
         </div>
         <div class="row">
           <div id="storyGenre" class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Horror</option>
-              <option value="2">Mystery</option>
-              <option value="3">Adventure</option>
-              <option value="3">Sci-Fi</option>
-            </select>
-            <label class="active amber-text text-lighten-5 homeText" for="story-title">Genre</label>
+            <ul id="genreChoices">
+              <li class="storyTypes">Humor</li>
+              <li class="storyTypes">Mystery</li>
+              <li class="storyTypes">Romance</li>
+              <li class="storyTypes">Sci-Fi</li>
+              
+            </ul>
+            <label class="active amber-text text-lighten-5 homeText" for="story-title" id="genreLabel">Genre</label>
+            <p id="genrePick"></p>
           </div>
         </div>
         <div class="row">
@@ -55,11 +56,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/write.js" type="text/javascript"></script>
-  {{!-- <script>
+  <script>
+    $("#genreLabel").on("click", show);
+    $(".storyTypes").on("click", hide);
     
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems, options);
-    });
+   function show() {
+     $("#genreChoices").css("display", "block");
+   }
+
+   function hide() {
+      $("#genreChoices").css("display", "none");
+      $("#genrePick").html(this);
+
+   }
     
-  </script> --}}
+  </script> 
