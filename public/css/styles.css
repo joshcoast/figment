@@ -128,3 +128,14 @@ transition:.25s;
 #close {
   display: none;
 }
+
+#comment {
+  display: none;
+}
+
+#commentA {
+  background-color: white;
+  margin: 0 auto;
+  height: 150px;
+  width: 60%;
+}
