@@ -27,13 +27,19 @@ $(document).ready(function(){
         } else if (path === "/read"){
             $(".menulinks").append(`<li><a href="/write" class="transparent btn-small">Write</a><li/>
             <li><a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a><li/>`)
+            $(".mobilelinks").append(`<li><a href="/write">write</a><li/>
+            <li><a href="/logout" id="logoutBtn">Log Out</a><li/>`)
         } else if (path === "/choice"){
             $(".menulinks").append(`<li><a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a><li/>`)
+            $(".mobilelinks").append(`<li><a href="/logout" id="logoutBtn" >Log Out</a><li/>`)
         } else if (path === "/write"){
             $(".menulinks").append(`<li><a href="/read" class="transparent btn-small">Read</a><li/>
             <li><a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a><li/>`)
+            $(".mobilelinks").append(`<li><a href="/read" >Read</a><li/>
+            <li><a href="/logout" id="logoutBtn">Log Out</a><li/>`)
         }  else if (path === "/"){
             $(".menulinks").append(`<li><a href="/signin" id="loginBtn" class="transparent btn-small">Log In</a><li/>`)
+            $(".mobilelinks").append(`<li><a href="/signin" id="loginBtn"" >Log In</a><li/>`)
         }
 
     }
