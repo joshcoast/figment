@@ -67,9 +67,8 @@ router.get("/api/story-index", function (req, res) {
   if (req.query.userid) {
     query.userid = req.query.userid;
   }
-  db.story.findAll({
+  db.Story.findAll({
     where: query,
-<<<<<<< HEAD
     include: [models.Author]
   }).then(function (dbStory) {
     res.json(dbStory);
@@ -107,9 +106,6 @@ router.get("/api/story-index/:id", function (req, res) {
       id: req.params.id
     },
     include: [models.Author]
-=======
-    //include: [db.user]
->>>>>>> 0ff467bcfccfebd55d2302e8019e3954cd259288
   }).then(function (dbStory) {
     res.json(dbStory);
   });

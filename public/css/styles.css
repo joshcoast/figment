@@ -120,7 +120,6 @@ vertical-align: middle;
   display: none;
 }
 
-<<<<<<< HEAD
 #comment {
   display: none;
 }
@@ -131,12 +130,7 @@ vertical-align: middle;
   height: 150px;
   width: 60%;
 }
-=======
-/* Added just for demo */
-.bgImage {
-  background-image: url("../images/samplebg.png");
-  background-repeat: no-repeat;
-  height: 901px;
-  width: 781px;
+
+#genreChoices {
+  display: none;
 }
->>>>>>> 0ff467bcfccfebd55d2302e8019e3954cd259288
