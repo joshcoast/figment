@@ -1,61 +1,44 @@
-<div class="navbar-fixed">
-    <nav class="transparent z-depth-0">
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-small-and-down">
-                <li>
-                    <a href="#" id="btn-home-view" class="transparent btn-small">Home</a>
-                </li>
-                <li>
-                    <a href="/logout" id="logoutBtn" class="transparent btn-small">Log Out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-
 <div class="container">
     <div class="row">
-        <div class="container">
+        {{!--
+        <div class="container"> --}}
             <h1 class="center homeText">Figment.Observer</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <div class="white-text center box">
-                <h4 class=" " id="userName">Hi {{user.firstname}}. Welcome to a new blogging experience.</h4><h3><strong> Are you here to:</strong></h3>
+            {{!-- </div> --}}
+        <div class="white-text center box">
+            <h5 class="homeText" id="userName">Hi {{user.firstname}}. Welcome to a new blogging experience.</h5>
+            <h3>
+                <strong> Are you here to:</strong>
+            </h3>
+            <div class="col s12 m5">
+                <div class="choices">
+                    <a href="/read">
+                        <img class="choiceimg" src="images/reader1-01.png">
+                    </a>
+                    <h3>read</h3>
+                </div>
+            </div>
+            <div class="col s12 m2 choice ">
+                <div class="vertical_line hide-on-small-only"></div>
+            </div>
+            <div class="col s12 m5">
+                <div class="choices">
+                    <a href="/write">
+                        <img class="choiceimg" src="images/writer-02.png">
+                    </a>
+                    <h3>write</h3>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-
-                <div class="col s12 m6 choice">
-                    <div class="choices">
-                       
-                        <img src="images/reader1-01.png">  
-                         <h3>read</h3>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="choices">
-                        <img src="images/writer-02.png">
-                         <h3>write</h3>
-                    </div>
-                </div>
-
-    </div>
 </div>
 
 
-
-<script>
-  $(document).ready(function () {
-    $(".choices").hover(function(){
-        $(this).parent(body).css('background-color','red');
-    });
-  });
-</script>
+{{!-- <script>
+    if ((window.location.pathname) === "/choice") {
+        console.log("it is")
+    }
+</script> --}}
 
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> {{!--
 <script src="../public/js/story-index.js" type="text/javascript"></script> --}}
-<script type="application/javascript" src="/js/choice.js" type="text/javascript"></script>
