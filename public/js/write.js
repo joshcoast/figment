@@ -1,22 +1,22 @@
 $(document).ready(function() {
-  // Getting jQuery references to the story body, title, form, and author select
-  var bodyInput = $("#body");
-  var titleInput = $("#storyTitle");
-  var storyForm = $("#storyForm");
 
   var currentUser = $('#storyForm').data( "userid" );
 
-  console.log(currentUser);
-
- let storyData = {
-   title: $("#storyTitle").val(),
-   genre: $("#storyGenre").val(),
-   description: $("#storyDescription").val(),
-   body: $("#storyBody").val(),
-   user_id: currentUser
-  };
-
   $("#submit").on("click", function(event) {
+
+    const storyTitle = $( "#storyTitle" ).val();
+    const storyDescription = $( "#storyDescription" ).val();
+    const storyGenre = $( "#storyGenre" ).val();
+    const storyBody = $( "#storyBody" ).val();
+
+    let storyData = {
+      title: storyTitle,
+      description: storyDescription,
+      genre: storyGenre,
+      body: storyBody,
+      user_id: currentUser
+    };
+
     $.post("/api/story-index", storyData)
       .then(getAuthors);
   });

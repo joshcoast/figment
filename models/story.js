@@ -1,45 +1,29 @@
 module.exports = (sequelize, DataTypes) => {
   const Story = sequelize.define('story', {
-    id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false
-    },
 
     user_id: {
-      type: DataTypes.UUID,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
 
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
 
     genre: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: {
-        len: [1]
-      }
     },
 
     description: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
 
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
     }
   }, {
     underscored: true
