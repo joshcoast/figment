@@ -146,10 +146,6 @@ li a {
   display: none;
 }
 
-<<<<<<< HEAD
-.listId {
-  display: none;
-=======
 /* -- inside pages -- */
 .inner-page {
   background-color: #206188;
@@ -206,5 +202,8 @@ li a {
   clear: both;
   content: "";
   display: table;
->>>>>>> 855b10d53d582d9a3e614aae002bb33a470ef13b
+}
+
+.listId {
+  display: none;
 }

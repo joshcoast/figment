@@ -1,31 +1,29 @@
-<body class="front-page">
-<div class="main-wrap">
-  {{> figment/navbar}}
-  <div class="container">
-    <div class="row">
-      <div id="homeTitle" class="container center">
-        <h1 class="center homeText">Figment.observer</h1>
-        <img src="/images/samplebg.png" alt="Figment Background" style="width: 85%;">
+<body class="front-page page-index">
+  <div class="main-wrap">
+    {{> figment/navbar}}
+    <div class="container">
+      <div class="row">
+        <div id="homeTitle" class="container center">
+          <h1 class="center homeText">Figment.observer</h1>
+          <img src="/images/samplebg.png" alt="Figment Background" style="width: 85%;">
+        </div>
       </div>
     </div>
   </div>
-</div>
+  {{> figment/scripts}}
+  <script>
+    $(document).ready(function () {
+      var txt = 'Figment.observer';
+      var speed = 150;
 
-<!-- Custom Script -->
-<script>
-  $(document).ready(function () {
-    var txt = 'Figment.observer';
-    var speed = 150;
-
-    function typeWriter() {
-      for (let i = 0; i < txt.length; i++) {
-        $("#homeTitle").innerHTML += txt.charAt(i);
-        setTimeout(typeWriter, speed);
+      function typeWriter() {
+        for (let i = 0; i < txt.length; i++) {
+          $("#homeTitle").innerHTML += txt.charAt(i);
+          setTimeout(typeWriter, speed);
+        };
       };
-    };
-    console.log("running.");
-    typeWriter();
-  })
-</script>
-{{> figment/scripts}}
+      console.log("running.");
+      typeWriter();
+    })
+  </script>
 </body>
