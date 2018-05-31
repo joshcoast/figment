@@ -13,7 +13,7 @@
     </div>
 <div  class="center" id="menu">
   <a class="btn waves-effect btn-large transparent" id="genre">Genre</a>
-  <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
+  <a class="btn waves-effect btn-large transparent" id="alphabet">Alphabetical</a>
   <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
 </div>
 <ul id="genres">
@@ -32,10 +32,9 @@
         {{#each story}}
         
         <li class="list-group-item">
-          <p class="index">{{this.id}}.
-            <strong>{{this.title}}</strong>
-          </p>
-          <p class="body">{{this.body}}</p>
+          <p class="title">{{this.title}}</p>
+          <p class="description">{{this.body}}</p>
+          <p class="description">{{this.description}}</p>
           <p class="type">{{this.genre}}</p>
         </li>
         {{/each}}
@@ -56,7 +55,7 @@
 
 
   $("#genre").on("click", genre);
-  $(".index").on("click", readersChoice);
+  $(".title").on("click", readersChoice);
   $("#humor").on("click", humor);
   $("#mystery").on("click", mystery);
   $("#romance").on("click", romance);
@@ -64,13 +63,23 @@
   $("#close").on("click", close);
   $("#all").on("click", all);
   $("#commentB").on("click", comment);
-  $("#popular").on("click", mostpopular);
+  $("#alphabet").on("click", alphabet);
   $("#recent").on("click", mostrecent);
+  
+
+function alphabet() {
 
 
-function mostpopular() {
+  
+
   $("#genres").css("display", "none");
+  
+sortListDir()
+
+  
 }
+
+
 function mostrecent() {
   $("#genres").css("display", "none");
 }
@@ -106,14 +115,15 @@ $(".type")[i].parentElement.classList.add(x);
 }  
 
 function readersChoice() {
-  //window.location.assign("../body")
   $(this).next('.body').css("display", "block");
-  $('.type', '.index' ).css("display", "none");
+  $('.type').css("display", "none");
   $('#close', '#comment').css("display", "block");
 }
 function humor() {
   $(".humor").css("display", "block");
-  $('.mystery', '.romance', '.sci-fi').css("display", "none");
+  $(".mystery").css("display", "none");
+  $(".romance").css("display", "none");
+  $(".sci-fi").css("display", "none");
 }
 
 function mystery() {
@@ -134,7 +144,6 @@ function scifi() {
 
 function close() {
   $("#close").css("display", "none");
-  $(".index").css("display", "block");
   $(".type").css("display", "block");
   $(".body").css("display", "none");
   $("#comment").css("display", "none");
@@ -145,6 +154,47 @@ classify("humor");
 classify("mystery");
 classify("romance");
 classify("sci-fi");
+
+function sortListDir() {
+  var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
+  list = document.getElementsByClassName("list-group");
+  switching = true;
+  dir = "asc"; 
+  while (switching) {
+    switching = false;
+    b = document.getElementsByClassName("list-group-item");
+    for (i = 0; i < (b.length - 1); i++) {
+      shouldSwitch = false;
+      
+      if (dir == "asc") {
+        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
+          
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+    
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+      switchcount ++;
+    } else {
+     
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
 
 
 
