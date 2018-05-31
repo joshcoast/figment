@@ -39,5 +39,9 @@ $(document).ready(function() {
 
 
 
+//plug-in scripts
+$('.modal').modal();
+$('.matchHeight').matchHeight();
 
 });
+

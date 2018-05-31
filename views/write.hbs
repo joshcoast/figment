@@ -39,11 +39,22 @@
               </div>
             </div>
             <div class="card-action">
-              {{!-- <input id="submit" type="submit" value="Submit" class="btn-small waves-effect white"> --}}
+              {{!--
+              <input id="submit" type="submit" value="Submit" class="btn-small waves-effect white"> --}}
 
               <button id="submit" type="submit" value="Submit" class="btn waves-effect light-blue darken-3" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
+              <!-- Modal Structure -->
+              <div id="modal{{this.id}}" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Congratulations {{user.firstname}}! Your story <q>{{this.title}}</q> has been published!</h4>
+                  <p>View it <a href="/read">here</a>.</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -51,5 +62,5 @@
     </div>
   </div>
   {{> figment/scripts}}
-  <script src="/js/write.js" type="text/javascript"></script> 
+  <script src="/js/write.js" type="text/javascript"></script>
 </body>
