@@ -51,7 +51,7 @@ app.use('/', routes);
 
 
 //syncing our sequlize models and then starting our express app
-models.sequelize.sync({ force: true }).then(function () {
+models.sequelize.sync({ force: false }).then(function () {
 	console.log('Nice! Database looks fine')
 
 	app.listen(PORT, function () {
