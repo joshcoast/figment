@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  //plugin settings 
+  $('textarea#storyBody').characterCounter();
+
   $('select').formSelect();
 
   var currentUser = $('#storyForm').data( "userid" );
@@ -26,7 +29,7 @@ $(document).ready(function() {
     console.log("ran");
   }
 
-  
+
 //   // Submits a new story and brings user to story-index page upon completion
 //   function submitPost(story) {
 //     $.post("/api/story-index", story, function() {

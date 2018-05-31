@@ -1,57 +1,68 @@
-<div class="container">
+<body class="inner-page">
+<div class="main-wrap">
+  {{> figment/navbar}}
+  <div class="container">
     <div class="row">
-        <div class="container">
-            <h1 class="center homeText">Figment.Observer</h1>
-        </div>
+      <div class="container">
+        <h1 class="center homeText">Figment.Observer</h1>
+      </div>
     </div>
     <div class="row">
-        <div class="col s12">
-            <div class="white-text center box">
-                <h5 class="homeText" > Sort By:</h5>
-            </div>
+      <div class="col s12">
+        <div class="white-text center box">
+          <h5 class="homeText"> Sort By:</h5>
         </div>
+      </div>
     </div>
-<div  class="center" id="menu">
-  <a class="btn waves-effect btn-large transparent" id="genre">Genre</a>
-  <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
-  <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
-</div>
-<ul id="genres">
-  <li id="all">All</li>
-  <li id="humor">Humor</li>
-  <li id="mystery">Mystery</li>
-  <li id="romance">Romance</li>
-  <li id="scifi">Sci-Fi</li>
-</ul>
-<button id="close">Close</button>
-<div class="container story">
-  <div class="row"></div>
-  <div class="row">
-    <div class="col-md-12 story-container">
-      <ul class="list-group">
+    <div class="center" id="menu">
+      <a class="btn waves-effect btn-large transparent" id="genre">Genre</a>
+      <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
+      <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
+    </div>
+    <ul id="genres">
+      <li id="all">All</li>
+      <li id="humor">Humor</li>
+      <li id="mystery">Mystery</li>
+      <li id="romance">Romance</li>
+      <li id="scifi">Sci-Fi</li>
+    </ul>
+    <div class="story">
+      <div class="row">
         {{#each story}}
-        
-        <li class="list-group-item">
-          <p class="index">{{this.id}}.
-            <strong>{{this.title}}</strong>
-          </p>
-          <p class="body">{{this.body}}</p>
-          <p class="type">{{this.genre}}</p>
-        </li>
+        <div class="story-item col s12 m6 l4 matchHeight">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://picsum.photos/420/320?image=2{{this.id}}">
+              <span class="card-title">{{this.title}}</span>
+              <!-- Modal Trigger -->
+              <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal{{this.id}}">
+                <i class="material-icons">add</i>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>{{this.description}}</p>
+              <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+              <!-- Modal Structure -->
+              <div id="modal{{this.id}}" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>{{this.title}}</h4>
+                  <p>{{this.body}}</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {{/each}}
-      </ul>
+      </div>
     </div>
   </div>
 </div>
-<div id="comment">
-  <input id="commentA" type="text">
-  <button id="commentB">Submit Comment</button>
-</div>
-</div>
-<!-- Custom Script 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script> -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- <script src="../public/js/story-index.js" type="text/javascript"></script> -->
+<script src="/js/read.js" type="text/javascript"></script>
 <script>
 
 
@@ -68,87 +79,89 @@
   $("#recent").on("click", mostrecent);
 
 
-function mostpopular() {
-  $("#genres").css("display", "none");
-}
-function mostrecent() {
-  $("#genres").css("display", "none");
-}
+  function mostpopular() {
+    $("#genres").css("display", "none");
+  }
+  function mostrecent() {
+    $("#genres").css("display", "none");
+  }
 
-function comment() {
-  let commentData = {
-   reader: "Ya boy",
-   feedback: $("#commentA").val().trim()
-   
-  };
+  function comment() {
+    let commentData = {
+      reader: "Ya boy",
+      feedback: $("#commentA").val().trim()
 
-  $("#comment").css("display", "none");
-  $.post("/api/comments", commentData)
+    };
+
+    $("#comment").css("display", "none");
+    $.post("/api/comments", commentData)
       .then(alert("Comment Submitted"));
-}
+  }
 
-function all() {
-  $('.humor' , '.mystery', '.romance', '.sci-fi').css("display", "block");
-}
+  function all() {
+    $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
+  }
 
   function genre() {
     $("#genres").css("display", "block");
   }
 
-function classify(x) {
-  for (i = 0; i < $(".type").length; i++) {
-    if ($(".type")[i].innerHTML == x) {
+  function classify(x) {
+    for (i = 0; i < $(".type").length; i++) {
+      if ($(".type")[i].innerHTML == x) {
 
-$(".type")[i].parentElement.classList.add(x);
+        $(".type")[i].parentElement.classList.add(x);
+      }
+
     }
-      
   }
-}  
 
-function readersChoice() {
-  //window.location.assign("../body")
-  $(this).next('.body').css("display", "block");
-  $('.type', '.index' ).css("display", "none");
-  $('#close', '#comment').css("display", "block");
-}
-function humor() {
-  $(".humor").css("display", "block");
-  $('.mystery', '.romance', '.sci-fi').css("display", "none");
-}
+  function readersChoice() {
+    //window.location.assign("../body")
+    $(this).next('.body').css("display", "block");
+    $('.type', '.index').css("display", "none");
+    $('#close', '#comment').css("display", "block");
+  }
+  function humor() {
+    $(".humor").css("display", "block");
+    $('.mystery', '.romance', '.sci-fi').css("display", "none");
+  }
 
-function mystery() {
-  $(".mystery").css("display", "block");
-  $('.humor', '.romance', '.sci-fi').css("display", "none");
-}
+  function mystery() {
+    $(".mystery").css("display", "block");
+    $('.humor', '.romance', '.sci-fi').css("display", "none");
+  }
 
-function romance() {
-  $(".romance").css("display", "block");
-  $('.mystery', '.humor', '.sci-fi').css("display", "none");
-}
+  function romance() {
+    $(".romance").css("display", "block");
+    $('.mystery', '.humor', '.sci-fi').css("display", "none");
+  }
 
-function scifi() {
-  $(".sci-fi").css("display", "block");
-  $('.mystery', '.humor', '.romance').css("display", "none");
-  
-}
+  function scifi() {
+    $(".sci-fi").css("display", "block");
+    $('.mystery', '.humor', '.romance').css("display", "none");
 
-function close() {
-  $("#close").css("display", "none");
-  $(".index").css("display", "block");
-  $(".type").css("display", "block");
-  $(".body").css("display", "none");
-  $("#comment").css("display", "none");
-}
+  }
+
+  function close() {
+    $("#close").css("display", "none");
+    $(".index").css("display", "block");
+    $(".type").css("display", "block");
+    $(".body").css("display", "none");
+    $("#comment").css("display", "none");
+  }
 
 
-classify("humor");
-classify("mystery");
-classify("romance");
-classify("sci-fi");
-
+  classify("humor");
+  classify("mystery");
+  classify("romance");
+  classify("sci-fi");
 
 
 
 
 
-</script>
+
+</script> 
+{{> figment/scripts}}
+</body>
