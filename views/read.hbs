@@ -32,10 +32,13 @@
         {{#each story}}
         
         <li class="list-group-item">
+          
           <p class="title">{{this.title}}</p>
-          <p class="description">{{this.body}}</p>
+          <p class="listId">{{this.id}}</p>
+          <p class="body">{{this.body}}</p>
           <p class="description">{{this.description}}</p>
           <p class="type">{{this.genre}}</p>
+          
         </li>
         {{/each}}
       </ul>
@@ -69,12 +72,14 @@
 
 function alphabet() {
 
-
+$("#genres").css("display", "none");
+for (i = 0; i < $(".list-group-item").length; i++) {
+ $(".listId")[i].before($(".title")[i]);
+ console.log($(".list-group-item")[i]);
+}
   
-
-  $("#genres").css("display", "none");
   
-sortListDir()
+sortListDir();
 
   
 }
@@ -82,6 +87,14 @@ sortListDir()
 
 function mostrecent() {
   $("#genres").css("display", "none");
+  
+
+for (i = 0; i < $(".list-group-item").length; i++) {
+ $(".title")[i].before($(".listId")[i]);
+ console.log($(".list-group-item")[i]);
+}
+
+sortListDir();
 }
 
 function comment() {
@@ -194,6 +207,7 @@ function sortListDir() {
     }
   }
 }
+
 
 
 
