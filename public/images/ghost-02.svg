@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Figment.observer_Layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 107.1 135.3" style="enable-background:new 0 0 107.1 135.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:url(#Background_1_);}
+	.st1{display:none;}
+	.st2{display:inline;}
+	.st3{fill:#2D6C8A;}
+	.st4{filter:url(#Adobe_OpacityMaskFilter);}
+	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st6{mask:url(#SVGID_1_);fill:url(#SVGID_2_);}
+	.st7{opacity:0.6;fill:url(#SVGID_3_);}
+	.st8{filter:url(#Adobe_OpacityMaskFilter_2_);}
+	.st9{filter:url(#Adobe_OpacityMaskFilter_3_);}
+	.st10{mask:url(#SVGID_4_);fill:url(#SVGID_5_);}
+	.st11{opacity:0.6;fill:url(#SVGID_6_);}
+	.st12{filter:url(#Adobe_OpacityMaskFilter_4_);}
+	.st13{filter:url(#Adobe_OpacityMaskFilter_5_);}
+	.st14{mask:url(#SVGID_7_);fill:url(#SVGID_8_);}
+	.st15{opacity:0.6;fill:url(#SVGID_9_);}
+	.st16{fill:url(#SVGID_10_);}
+	.st17{fill:url(#SVGID_11_);}
+	.st18{fill:url(#SVGID_12_);}
+	.st19{fill:url(#SVGID_13_);}
+	.st20{fill:url(#SVGID_14_);}
+	.st21{fill:url(#SVGID_15_);}
+	.st22{fill:url(#SVGID_16_);}
+	.st23{fill:url(#SVGID_17_);}
+	.st24{fill:url(#SVGID_18_);}
+	.st25{fill:#0D1E32;}
+	.st26{fill:url(#SVGID_19_);}
+	.st27{fill:url(#SVGID_20_);}
+	.st28{display:inline;fill:url(#SVGID_21_);}
+	.st29{display:inline;fill:#0E405B;}
+	.st30{fill:#FFFFFF;}
+	.st31{filter:url(#Adobe_OpacityMaskFilter_6_);}
+	.st32{filter:url(#Adobe_OpacityMaskFilter_7_);}
+	.st33{mask:url(#SVGID_22_);fill:url(#SVGID_23_);}
+	.st34{fill:url(#SVGID_24_);}
+	.st35{filter:url(#Adobe_OpacityMaskFilter_8_);}
+	.st36{filter:url(#Adobe_OpacityMaskFilter_9_);}
+	.st37{mask:url(#SVGID_25_);fill:url(#SVGID_26_);}
+	.st38{fill:url(#SVGID_27_);}
+	.st39{filter:url(#Adobe_OpacityMaskFilter_10_);}
+	.st40{filter:url(#Adobe_OpacityMaskFilter_11_);}
+	.st41{mask:url(#SVGID_28_);fill:url(#SVGID_29_);}
+	.st42{fill:url(#SVGID_30_);}
+	.st43{fill:#F3F4C4;}
+	.st44{filter:url(#Adobe_OpacityMaskFilter_12_);}
+	.st45{filter:url(#Adobe_OpacityMaskFilter_13_);}
+	.st46{mask:url(#SVGID_31_);fill:url(#SVGID_32_);}
+	.st47{fill:url(#SVGID_33_);}
+	.st48{fill:#EFA139;}
+	.st49{fill:#CC7429;}
+	.st50{fill:#D88228;}
+	.st51{opacity:0.4;fill:#D88228;}
+	.st52{fill:#FCC948;}
+	.st53{fill:#D68128;}
+	.st54{fill:#B25F27;}
+	.st55{filter:url(#Adobe_OpacityMaskFilter_14_);}
+	.st56{filter:url(#Adobe_OpacityMaskFilter_15_);}
+	.st57{mask:url(#SVGID_34_);fill:url(#SVGID_35_);}
+	.st58{fill:url(#SVGID_36_);}
+	.st59{fill:#1C5371;}
+	.st60{fill:#F9ED32;}
+	.st61{fill:url(#SVGID_37_);}
+	.st62{fill:#527E9B;}
+	.st63{display:inline;fill:#FFFFFF;}
+	.st64{display:inline;fill:#F59425;}
+	.st65{fill:#FFECDE;}
+	.st66{fill:#00A5BD;}
+	.st67{fill:#DFF2F8;}
+	.st68{fill:#DF4F51;}
+	.st69{display:inline;fill:#FFECDE;}
+	.st70{display:inline;fill:#E72B4B;}
+	.st71{filter:url(#Adobe_OpacityMaskFilter_16_);}
+	.st72{filter:url(#Adobe_OpacityMaskFilter_17_);}
+	.st73{mask:url(#SVGID_38_);fill:url(#SVGID_39_);}
+	.st74{fill:url(#SVGID_40_);}
+	.st75{fill:#56595C;}
+	.st76{fill:#F2F3F6;}
+	.st77{fill:#AEB2BE;}
+	.st78{fill:#6B4C2A;}
+	.st79{fill:#AFB4BF;}
+	.st80{fill:#F1F2F6;}
+	.st81{fill:#110F0D;}
+	.st82{fill:#4F4D4B;}
+	.st83{fill:#D3D4D9;}
+	.st84{fill:#989BA5;}
+	.st85{fill:none;}
+	.st86{fill:#9B9B9B;}
+	.st87{fill:#9E4E34;}
+	.st88{fill:#484340;}
+	.st89{fill:#393432;}
+	.st90{fill:#A65F41;}
+	.st91{fill:#8A412F;}
+	.st92{fill:#B36952;}
+	.st93{fill:#EA8B4A;}
+	.st94{fill:#713221;}
+	.st95{fill:#5F241A;}
+	.st96{fill:#381814;}
+	.st97{fill:#B6634D;}
+	.st98{fill:#D1732C;}
+	.st99{fill:#6ACBDA;}
+	.st100{fill:#1FB7BE;}
+	.st101{fill:#FDB92E;}
+	.st102{fill:#F6B662;}
+	.st103{fill:#5E5E5E;}
+</style>
+<linearGradient id="Background_1_" gradientUnits="userSpaceOnUse" x1="385.6342" y1="417.9384" x2="385.6342" y2="-666.1365">
+	<stop  offset="0.3265" style="stop-color:#72C4CC"/>
+	<stop  offset="0.4304" style="stop-color:#6ABAC5"/>
+	<stop  offset="0.5967" style="stop-color:#58A2B6"/>
+	<stop  offset="0.8033" style="stop-color:#3E81A0"/>
+	<stop  offset="1" style="stop-color:#206188"/>
+</linearGradient>
+<rect id="Background" x="-574.4" y="-664.8" class="st0" width="1920" height="1081"/>
+<g id="Mountains__x26__Trees" class="st1">
+	<g id="Mountains" class="st2">
+		<g>
+			<polygon class="st3" points="679.9,102.9 387.4,-403 94.9,102.9 			"/>
+		</g>
+		<g>
+			<polygon class="st3" points="388.9,102.9 191.6,-238.2 -5.6,102.9 			"/>
+		</g>
+	</g>
+	<g id="Back_Bushes" class="st2">
+		<g>
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="97.3442" y1="-210.649" x2="97.3442" y2="101.3393">
+				<stop  offset="0" style="stop-color:#0E405B"/>
+				<stop  offset="0.373" style="stop-color:#0E3E59"/>
+				<stop  offset="0.8418" style="stop-color:#0F3851"/>
+				<stop  offset="1" style="stop-color:#0F354D"/>
+			</linearGradient>
+			<path style="fill:url(#SVGID_1_);" d="M208.9,102.9V86.9C217.1,84,223,76.2,223,67c0-11.7-9.5-21.1-21.1-21.1
+				c-5.9,0-11.1,2.4-15,6.2c-2.4-5.9-8.2-10.1-15-10.1c-5.4,0-10.1,2.6-13.1,6.7c-3.4-2.3-7.4-3.6-11.7-3.6
+				c-10.1,0-18.5,7-20.6,16.5c-2.9-3.1-7.1-5-11.7-5c-4.3,0-8.3,1.7-11.2,4.5c-2.6-8.7-10.7-15.1-20.2-15.1
+				c-11.7,0-21.1,9.5-21.1,21.1c0,0.6,0,1.1,0.1,1.7c0,0-0.1,0-0.1,0c-4.5,0-8.5,1.8-11.5,4.8c-3-5.2-8.6-8.7-15-8.7
+				c-5.9,0-11.1,2.9-14.2,7.4c-3.3-2.2-7.3-3.5-11.6-3.5C-0.7,68.7-9.6,76.6-11,87c-0.4,0-0.8-0.1-1.2-0.1c-8.9,0-16,7.1-16.2,16
+				H208.9z"/>
+		</g>
+	</g>
+</g>
+<g id="Floating" class="st1">
+	<path class="st29" d="M798.6,155.1H-29.5c-13.8,0-25-11.2-25-25v-2.3c0-13.8,11.2-25,25-25h828.1c13.8,0,25,11.2,25,25v2.3
+		C823.6,143.9,812.3,155.1,798.6,155.1z"/>
+</g>
+<g id="Clouds__x26__Shadows__x28_Left_to_Right_x29_" class="st1">
+	<g class="st2">
+		<g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="16.9" y="-105.6" width="223" height="116.4">
+					<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="16.9" y="-105.6" width="223" height="116.4" id="SVGID_2_">
+				<g class="st4">
+					<defs>
+						<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="16.9" y="-105.6" width="223" height="116.4">
+							<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="16.9" y="-105.6" width="223" height="116.4" id="SVGID_2_">
+					</mask>
+					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="128.4423" y1="22.954" x2="128.4423" y2="-114.3265">
+						<stop  offset="0.3774" style="stop-color:#000000"/>
+						<stop  offset="0.4933" style="stop-color:#2A2A2A"/>
+						<stop  offset="0.7524" style="stop-color:#949494"/>
+						<stop  offset="1" style="stop-color:#FFFFFF"/>
+					</linearGradient>
+					<polygon style="mask:url(#SVGID_2_);fill:url(#SVGID_3_);" points="172.7,-105.6 16.9,-105.6 84.2,10.7 239.9,10.7 					"/>
+				</g>
+			</mask>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="128.4423" y1="22.954" x2="128.4423" y2="-114.3265">
+				<stop  offset="0.3774" style="stop-color:#F1F2F2"/>
+				<stop  offset="0.8964" style="stop-color:#CED0D1"/>
+				<stop  offset="1" style="stop-color:#C7C8CA"/>
+			</linearGradient>
+			<polygon style="fill:url(#SVGID_4_);" points="172.7,-105.6 16.9,-105.6 84.2,10.7 239.9,10.7 			"/>
+		</g>
+	</g>
+</g>
+<g id="Ghost">
+	<g id="Body">
+		<path class="st67" d="M106.9,133.8c-0.6-2-1.2-3.9-1.6-5.9c-1.3-6.6-2.5-13.3-3.7-19.9c-0.7-3.8-1.2-7.7-1.8-11.6
+			c-0.8-5.9-1.6-11.9-2.4-17.8C96.7,73.1,96,67.5,95.4,62c-0.4-3.4-0.8-6.8-1.1-10.1c-0.3-2.9-0.7-5.7-0.9-8.6
+			c-0.3-4.5-1-8.9-2.5-13.1c-2.3-6.3-5.6-12.1-10.1-17.1c-5.5-6-11.9-10.5-20-12.3c-4.8-1.1-9.6-1-14.4,0.3
+			c-4.9,1.3-9.2,3.7-13.1,6.8C27,12.8,22.5,18.9,19.2,26.1c-2.3,5.1-3.6,10.4-4,16c-0.4,5.2-0.8,10.4-1.3,15.6
+			c-0.5,5.1-1.1,10.1-1.7,15.2c-0.7,6-1.4,12-2.2,18c-0.5,4.2-1.2,8.4-1.8,12.6c-0.3,1.9-0.6,3.8-0.9,5.7c-0.4,1.9-0.8,3.8-1.2,5.6
+			c0,0.2,0,0.4,0,0.6c-0.4,1.7-0.8,3.4-1.2,5c-1.1,5-2.4,10-5,14.6c1.6,0.3,2.9-0.4,4.1-0.8c3.4-1.2,6.8-2.6,10.3-3.8
+			c1.5-0.5,3-0.8,4.6-0.3c2.8,0.9,5.6,1.7,8.3,2.8c3.8,1.5,7.6,1.9,11.6,0.6c3.4-1.1,6.9-2,10.4-3c2.3-0.6,4.7-0.9,7.1-0.3
+			c0.8,0.2,1.6,0.4,2.4,0.6c0.3,0,0.5,0.1,0.8,0.1c3,0.9,5.9,1.7,8.9,2.6c3.8,1.2,7.4,0.9,11-0.6c2.4-1,4.9-1.9,7.4-2.6
+			c1.4-0.4,3-0.8,4.5-0.2c2.6,0.9,5.2,1.9,7.9,2.8c2.1,0.8,4.2,1.6,6.4,2.3C106.9,135.5,107.3,135,106.9,133.8z M50.1,27.8
+			c0.1,3.3-0.8,6-2.9,8.1c-3.1,3.2-7,2.8-9.7-0.4c-2.2-2.5-2.8-5.5-2.5-8.8c0.2-2.5,1.1-4.7,2.7-6.5c3.1-3.4,8.1-2.9,10.6,1.1
+			C49.5,23.4,50.2,25.7,50.1,27.8z M60.1,73.1c-0.9-0.1-1.9,0-2.8,0c0,0,0,0,0,0c-1,0-2.1,0-3.1,0c-0.6,0-1-0.2-1-0.9
+			c-0.2-1.9-0.5-3.9-0.7-5.8c-0.2-1.2,0-1.5,1.3-1.5c1.8,0,3.6,0,5.4,0c0.9,0,1.3,0.2,1.4,1.2c0.1,2,0.5,3.9,0.8,5.9
+			C61.4,72.8,61,73.1,60.1,73.1z M69,36.4c-3.2,2.8-7,2-9.3-1c-2.7-3.3-3-7.2-1.9-11.2c0.5-1.8,1.4-3.4,2.8-4.6
+			c2.9-2.5,6.7-2.2,9.3,0.8c1.7,2,2.7,4.7,2.6,7.4C72.3,31.4,71.5,34.3,69,36.4z"/>
+	</g>
+</g>
+</svg>
