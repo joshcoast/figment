@@ -5,13 +5,13 @@ $(document).ready(function () {
     var txt = 'Figment.observer'; /* The text */
     var speed = 200; /* The speed/duration of the effect in milliseconds */
 
-    function typeWriter() {
-        if (i < txt.length) {
-            document.getElementById("textScroll").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-    }
+    // function typeWriter() {
+    //     if (i < txt.length) {
+    //         document.getElementById("textScroll").innerHTML += txt.charAt(i);
+    //         i++;
+    //         setTimeout(typeWriter, speed);
+    //     }
+    // }
 
 
     $('.sidenav').sidenav();
@@ -58,6 +58,6 @@ $(document).ready(function () {
 
     }
     addmenulinks();
-    typeWriter();
+    // typeWriter();
 
 });

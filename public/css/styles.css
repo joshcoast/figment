@@ -194,6 +194,20 @@ li a {
   z-index: 1;
 }
 
+.author-name {
+  opacity: .75;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  min-width: 3rem;
+  padding: 0 6px 0 0;
+  text-align: center;
+  line-height: 22px;
+  height: 22px;
+  float: left;
+  box-sizing: border-box;
+}
+
 .genre-tag {
   margin-top: 1.5rem;
 }

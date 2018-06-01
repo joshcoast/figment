@@ -36,13 +36,13 @@ module.exports = function (sequelize, DataTypes) {
     underscored: true
   });
 
-  // User.associate = function(models) {
-  //   // Associating User with Stories
-  //   // When a User is deleted, also delete any associated Stories
-  //   User.hasMany(models.Story, {
-  //     onDelete: "cascade"
-  //   });
-  // };
+  User.associate = function(models) {
+    // Associating User with Stories
+    // When a User is deleted, also delete any associated Stories
+    User.hasMany(models.story, {
+      onDelete: "cascade"
+    });
+  };
 
   return User;
 
