@@ -1,8 +1,9 @@
 // Dependencies
 // =============================================================
-var express = require('express');
-var router = express.Router();
-var db = require('../models');
+const express = require('express');
+const router = express.Router();
+const db = require('../models');
+const animejs = require("animejs");
 
 // Express Routes
 // =============================================================
@@ -10,7 +11,7 @@ var db = require('../models');
 router.get("/", function (req, res) {
   console.log('user', req.user);
   db.story.findAll({}).then(function (data) {
-    var hbsObject = {
+    let hbsObject = {
       story: data
     };
     res.render('index', hbsObject);

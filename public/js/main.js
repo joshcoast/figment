@@ -1,6 +1,8 @@
-
 $(document).ready(function () {
 
+
+
+    //SCROLLTEXT//
     var i = 0;
     var txt = 'Figment.observer'; /* The text */
     var speed = 200; /* The speed/duration of the effect in milliseconds */
@@ -14,8 +16,9 @@ $(document).ready(function () {
     }
 
 
+    //Mobile Navtigation
     $('.sidenav').sidenav();
-
+    
     $(".choiceimg").hover(
         function () {
             $(".mainbody").css({

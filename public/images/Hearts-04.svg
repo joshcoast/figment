@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Figment.observer_Layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 101.4 72.7" style="enable-background:new 0 0 101.4 72.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:url(#Background_1_);}
+	.st1{display:none;}
+	.st2{display:inline;}
+	.st3{fill:#2D6C8A;}
+	.st4{filter:url(#Adobe_OpacityMaskFilter);}
+	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
+	.st6{mask:url(#SVGID_1_);fill:url(#SVGID_2_);}
+	.st7{opacity:0.6;fill:url(#SVGID_3_);}
+	.st8{filter:url(#Adobe_OpacityMaskFilter_2_);}
+	.st9{filter:url(#Adobe_OpacityMaskFilter_3_);}
+	.st10{mask:url(#SVGID_4_);fill:url(#SVGID_5_);}
+	.st11{opacity:0.6;fill:url(#SVGID_6_);}
+	.st12{filter:url(#Adobe_OpacityMaskFilter_4_);}
+	.st13{filter:url(#Adobe_OpacityMaskFilter_5_);}
+	.st14{mask:url(#SVGID_7_);fill:url(#SVGID_8_);}
+	.st15{opacity:0.6;fill:url(#SVGID_9_);}
+	.st16{fill:url(#SVGID_10_);}
+	.st17{fill:url(#SVGID_11_);}
+	.st18{fill:url(#SVGID_12_);}
+	.st19{fill:url(#SVGID_13_);}
+	.st20{fill:url(#SVGID_14_);}
+	.st21{fill:url(#SVGID_15_);}
+	.st22{fill:url(#SVGID_16_);}
+	.st23{fill:url(#SVGID_17_);}
+	.st24{fill:url(#SVGID_18_);}
+	.st25{fill:#0D1E32;}
+	.st26{fill:url(#SVGID_19_);}
+	.st27{fill:url(#SVGID_20_);}
+	.st28{display:inline;fill:url(#SVGID_21_);}
+	.st29{display:inline;fill:#0E405B;}
+	.st30{fill:#FFFFFF;}
+	.st31{filter:url(#Adobe_OpacityMaskFilter_6_);}
+	.st32{filter:url(#Adobe_OpacityMaskFilter_7_);}
+	.st33{mask:url(#SVGID_22_);fill:url(#SVGID_23_);}
+	.st34{fill:url(#SVGID_24_);}
+	.st35{filter:url(#Adobe_OpacityMaskFilter_8_);}
+	.st36{filter:url(#Adobe_OpacityMaskFilter_9_);}
+	.st37{mask:url(#SVGID_25_);fill:url(#SVGID_26_);}
+	.st38{fill:url(#SVGID_27_);}
+	.st39{filter:url(#Adobe_OpacityMaskFilter_10_);}
+	.st40{filter:url(#Adobe_OpacityMaskFilter_11_);}
+	.st41{mask:url(#SVGID_28_);fill:url(#SVGID_29_);}
+	.st42{fill:url(#SVGID_30_);}
+	.st43{fill:#F3F4C4;}
+	.st44{filter:url(#Adobe_OpacityMaskFilter_12_);}
+	.st45{filter:url(#Adobe_OpacityMaskFilter_13_);}
+	.st46{mask:url(#SVGID_31_);fill:url(#SVGID_32_);}
+	.st47{fill:url(#SVGID_33_);}
+	.st48{fill:#EFA139;}
+	.st49{fill:#CC7429;}
+	.st50{fill:#D88228;}
+	.st51{opacity:0.4;fill:#D88228;}
+	.st52{fill:#FCC948;}
+	.st53{fill:#D68128;}
+	.st54{fill:#B25F27;}
+	.st55{filter:url(#Adobe_OpacityMaskFilter_14_);}
+	.st56{filter:url(#Adobe_OpacityMaskFilter_15_);}
+	.st57{mask:url(#SVGID_34_);fill:url(#SVGID_35_);}
+	.st58{fill:url(#SVGID_36_);}
+	.st59{fill:#1C5371;}
+	.st60{fill:#F9ED32;}
+	.st61{fill:url(#SVGID_37_);}
+	.st62{fill:#527E9B;}
+	.st63{display:inline;fill:#FFFFFF;}
+	.st64{display:inline;fill:#F59425;}
+	.st65{fill:#FFECDE;}
+	.st66{fill:#00A5BD;}
+	.st67{fill:#DFF2F8;}
+	.st68{fill:#DF4F51;}
+	.st69{display:inline;fill:#FFECDE;}
+	.st70{display:inline;fill:#E72B4B;}
+	.st71{filter:url(#Adobe_OpacityMaskFilter_16_);}
+	.st72{filter:url(#Adobe_OpacityMaskFilter_17_);}
+	.st73{mask:url(#SVGID_38_);fill:url(#SVGID_39_);}
+	.st74{fill:url(#SVGID_40_);}
+	.st75{fill:#56595C;}
+	.st76{fill:#F2F3F6;}
+	.st77{fill:#AEB2BE;}
+	.st78{fill:#6B4C2A;}
+	.st79{fill:#AFB4BF;}
+	.st80{fill:#F1F2F6;}
+	.st81{fill:#110F0D;}
+	.st82{fill:#4F4D4B;}
+	.st83{fill:#D3D4D9;}
+	.st84{fill:#989BA5;}
+	.st85{fill:none;}
+	.st86{fill:#9B9B9B;}
+	.st87{fill:#9E4E34;}
+	.st88{fill:#484340;}
+	.st89{fill:#393432;}
+	.st90{fill:#A65F41;}
+	.st91{fill:#8A412F;}
+	.st92{fill:#B36952;}
+	.st93{fill:#EA8B4A;}
+	.st94{fill:#713221;}
+	.st95{fill:#5F241A;}
+	.st96{fill:#381814;}
+	.st97{fill:#B6634D;}
+	.st98{fill:#D1732C;}
+	.st99{fill:#6ACBDA;}
+	.st100{fill:#1FB7BE;}
+	.st101{fill:#FDB92E;}
+	.st102{fill:#F6B662;}
+	.st103{fill:#5E5E5E;}
+</style>
+<linearGradient id="Background_1_" gradientUnits="userSpaceOnUse" x1="235.0146" y1="572.4255" x2="235.0146" y2="-511.6494">
+	<stop  offset="0.3265" style="stop-color:#72C4CC"/>
+	<stop  offset="0.4304" style="stop-color:#6ABAC5"/>
+	<stop  offset="0.5967" style="stop-color:#58A2B6"/>
+	<stop  offset="0.8033" style="stop-color:#3E81A0"/>
+	<stop  offset="1" style="stop-color:#206188"/>
+</linearGradient>
+<rect id="Background" x="-725" y="-510.3" class="st0" width="1920" height="1081"/>
+<g id="Mountains__x26__Trees" class="st1">
+	<g id="Mountains" class="st2">
+		<g>
+			<polygon class="st3" points="529.3,257.3 236.8,-248.5 -55.7,257.3 			"/>
+		</g>
+		<g>
+			<polygon class="st3" points="238.2,257.3 41,-83.7 -156.2,257.3 			"/>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="41" y="-83.7" width="197.2" height="341.1">
+					<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="41" y="-83.7" width="197.2" height="341.1" id="SVGID_1_">
+				<g class="st4">
+					<defs>
+						<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="41" y="-83.7" width="197.2" height="341.1">
+							<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="41" y="-83.7" width="197.2" height="341.1" id="SVGID_1_">
+					</mask>
+					
+						<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="4646.7251" y1="511.5007" x2="4646.7251" y2="-83.7296" gradientTransform="matrix(-1 0 0 1 4786.3604 0)">
+						<stop  offset="0.6427" style="stop-color:#000000"/>
+						<stop  offset="0.7082" style="stop-color:#2A2A2A"/>
+						<stop  offset="0.8548" style="stop-color:#949494"/>
+						<stop  offset="0.9949" style="stop-color:#FFFFFF"/>
+					</linearGradient>
+					<polygon class="st6" points="238.2,257.3 41,-83.7 41,257.3 					"/>
+				</g>
+			</mask>
+			
+				<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="4646.7251" y1="511.5007" x2="4646.7251" y2="-83.7296" gradientTransform="matrix(-1 0 0 1 4786.3604 0)">
+				<stop  offset="0.6427" style="stop-color:#C6E8EB"/>
+				<stop  offset="0.9232" style="stop-color:#CED7D8"/>
+				<stop  offset="0.9949" style="stop-color:#D1D3D4"/>
+			</linearGradient>
+			<polygon class="st7" points="238.2,257.3 41,-83.7 41,257.3 			"/>
+		</g>
+	</g>
+	<g id="Back_Trees" class="st2">
+		<g>
+			<g>
+				<g>
+					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="130.406" y1="-56.1621" x2="130.406" y2="255.827">
+						<stop  offset="0" style="stop-color:#0E405B"/>
+						<stop  offset="0.373" style="stop-color:#0E3E59"/>
+						<stop  offset="0.8418" style="stop-color:#0F3851"/>
+						<stop  offset="1" style="stop-color:#0F354D"/>
+					</linearGradient>
+					<polygon style="fill:url(#SVGID_4_);" points="60.3,210.5 30.1,257.3 230.7,257.3 200.5,210.5 224.6,210.5 185.8,150.4 
+						203.7,150.4 170.5,98.9 187.5,98.9 154.7,48 172.1,48 130.4,-16.5 88.7,48 106.1,48 73.3,98.9 90.3,98.9 57.1,150.4 
+						75.1,150.4 36.2,210.5 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="80.2615" y1="285.496" x2="80.2615" y2="-16.5401">
+						<stop  offset="0" style="stop-color:#0F354D"/>
+						<stop  offset="0.4261" style="stop-color:#184762"/>
+						<stop  offset="1" style="stop-color:#225D7E"/>
+					</linearGradient>
+					<polygon style="fill:url(#SVGID_5_);" points="64,204.9 30.1,257.3 130.4,257.3 130.4,-16.5 88.7,48 109.5,42.7 73.3,98.9 
+						94.1,93 57.1,150.4 79.6,143.3 36.2,210.5 					"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Clouds__x26__Shadows__x28_Left_to_Right_x29_" class="st1">
+	<g class="st2">
+		<g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="59.9" y="-109.3" width="295.6" height="122">
+					<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="59.9" y="-109.3" width="295.6" height="122" id="SVGID_6_">
+				<g class="st8">
+					<defs>
+						<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="59.9" y="-109.3" width="295.6" height="122">
+							<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="59.9" y="-109.3" width="295.6" height="122" id="SVGID_6_">
+					</mask>
+					<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="207.735" y1="25.5038" x2="207.735" y2="-118.4573">
+						<stop  offset="0.3774" style="stop-color:#000000"/>
+						<stop  offset="0.4933" style="stop-color:#2A2A2A"/>
+						<stop  offset="0.7524" style="stop-color:#949494"/>
+						<stop  offset="1" style="stop-color:#FFFFFF"/>
+					</linearGradient>
+					<polygon style="mask:url(#SVGID_6_);fill:url(#SVGID_7_);" points="285,-109.3 59.9,-109.3 130.5,12.7 355.5,12.7 					"/>
+				</g>
+			</mask>
+			<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="207.735" y1="25.5038" x2="207.735" y2="-118.4573">
+				<stop  offset="0.3774" style="stop-color:#F1F2F2"/>
+				<stop  offset="0.8964" style="stop-color:#CED0D1"/>
+				<stop  offset="1" style="stop-color:#C7C8CA"/>
+			</linearGradient>
+			<polygon style="fill:url(#SVGID_8_);" points="285,-109.3 59.9,-109.3 130.5,12.7 355.5,12.7 			"/>
+		</g>
+	</g>
+	<g class="st2">
+		<g>
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter_4_" filterUnits="userSpaceOnUse" x="-133.7" y="48.9" width="223" height="116.4">
+					<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="-133.7" y="48.9" width="223" height="116.4" id="SVGID_9_">
+				<g class="st12">
+					<defs>
+						<filter id="Adobe_OpacityMaskFilter_5_" filterUnits="userSpaceOnUse" x="-133.7" y="48.9" width="223" height="116.4">
+							<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
+					<mask maskUnits="userSpaceOnUse" x="-133.7" y="48.9" width="223" height="116.4" id="SVGID_9_">
+					</mask>
+					<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="-22.1772" y1="177.4411" x2="-22.1772" y2="40.1606">
+						<stop  offset="0.3774" style="stop-color:#000000"/>
+						<stop  offset="0.4933" style="stop-color:#2A2A2A"/>
+						<stop  offset="0.7524" style="stop-color:#949494"/>
+						<stop  offset="1" style="stop-color:#FFFFFF"/>
+					</linearGradient>
+					<polygon style="mask:url(#SVGID_9_);fill:url(#SVGID_10_);" points="22,48.9 -133.7,48.9 -66.4,165.2 89.3,165.2 					"/>
+				</g>
+			</mask>
+			<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="-22.1772" y1="177.4411" x2="-22.1772" y2="40.1606">
+				<stop  offset="0.3774" style="stop-color:#F1F2F2"/>
+				<stop  offset="0.8964" style="stop-color:#CED0D1"/>
+				<stop  offset="1" style="stop-color:#C7C8CA"/>
+			</linearGradient>
+			<polygon class="st17" points="22,48.9 -133.7,48.9 -66.4,165.2 89.3,165.2 			"/>
+		</g>
+		<path class="st30" d="M11.3,40.2c-3.7,0-6.9,1.8-8.9,4.5c0-0.1-0.1-0.2-0.1-0.2c0.3-3.1-0.9-7.4-0.9-7.4
+			c-2.8-8.6-10.8-14.8-20.3-14.8c-5,0-9.6,1.7-13.3,4.6C-35,15.1-45.6,6.3-58.2,6.3C-72.8,6.3-84.7,18-85,32.6
+			c-2.7-1.4-5.7-2.1-8.9-2.1c-8.9,0-16.5,5.9-19,14c-2.1-2.8-5.5-4.6-9.3-4.6c-5.6,0-10.3,4-11.5,9.3H22.1
+			C21,44,16.6,40.2,11.3,40.2z"/>
+	</g>
+</g>
+<g id="Hearts_Left">
+	<g>
+		<rect x="9.4" y="41.3" class="st68" width="2.9" height="2.9"/>
+		<rect x="12.2" y="38.5" class="st68" width="2.9" height="2.9"/>
+		<rect x="15" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="17.8" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="20.7" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="23.6" y="38.5" class="st68" width="2.9" height="2.9"/>
+		<rect x="26.4" y="41.3" class="st68" width="2.9" height="2.9"/>
+		<rect x="29.3" y="44.2" class="st68" width="2.9" height="2.9"/>
+		<rect x="32.1" y="41.3" class="st68" width="2.9" height="2.9"/>
+		<rect x="35" y="38.5" class="st68" width="2.9" height="2.9"/>
+		<rect x="37.8" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="40.7" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="43.5" y="35.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="46.4" y="38.5" class="st68" width="2.9" height="2.9"/>
+		<rect x="49.1" y="41.3" class="st68" width="2.9" height="2.9"/>
+		<rect x="49.1" y="44.2" class="st68" width="2.9" height="2.9"/>
+		<rect x="49.1" y="47.1" class="st68" width="2.9" height="2.9"/>
+		<rect x="49.1" y="49.9" class="st68" width="2.9" height="2.9"/>
+		<rect x="46.4" y="49.9" class="st68" width="2.9" height="2.9"/>
+		<rect x="46.4" y="52.8" class="st68" width="2.9" height="2.9"/>
+		<rect x="43.5" y="52.8" class="st68" width="2.9" height="2.9"/>
+		<rect x="43.5" y="55.6" class="st68" width="2.9" height="2.9"/>
+		<rect x="40.7" y="58.5" class="st68" width="2.9" height="2.9"/>
+		<rect x="37.8" y="61.3" class="st68" width="2.9" height="2.9"/>
+		<rect x="35" y="64.2" class="st68" width="2.9" height="2.9"/>
+		<rect x="32.1" y="67" class="st68" width="2.9" height="2.9"/>
+		<rect x="29.3" y="69.9" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="9.4" y="47.1" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 21.699 96.9563)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="9.4" y="44.2" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 21.699 91.2503)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="9.4" y="49.9" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 21.699 102.6623)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="12.2" y="49.9" transform="matrix(-1 -4.526747e-11 4.526747e-11 -1 27.153 102.6623)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="12.2" y="52.8" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 27.153 108.3683)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="15" y="52.8" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 32.859 108.3683)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="15" y="55.6" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 32.859 114.0743)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="17.9" y="58.5" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 38.5651 119.7804)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="20.7" y="61.3" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 44.2711 125.4864)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="23.6" y="64.2" transform="matrix(-1 -4.462975e-11 4.462975e-11 -1 49.9771 131.1924)" class="st68" width="2.9" height="2.9"/>
+		
+			<rect x="26.4" y="67" transform="matrix(-1 -4.526747e-11 4.526747e-11 -1 55.6831 136.8984)" class="st68" width="2.9" height="2.9"/>
+		<polygon class="st68" points="12.2,41.3 15,38.5 23.6,38.5 32.1,47.1 32.1,44.2 37.8,38.5 46.4,38.5 49.1,41.3 49.1,49.6 
+			43.5,58.5 30.7,71.3 12.2,52.8 		"/>
+	</g>
+	<g>
+		<rect x="44.9" y="7.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="48.7" y="3.8" class="st68" width="3.8" height="3.8"/>
+		<rect x="52.4" class="st68" width="3.8" height="3.8"/>
+		<rect x="56.1" class="st68" width="3.8" height="3.8"/>
+		<rect x="59.9" class="st68" width="3.8" height="3.8"/>
+		<rect x="63.7" y="3.8" class="st68" width="3.8" height="3.8"/>
+		<rect x="67.5" y="7.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="71.3" y="11.4" class="st68" width="3.8" height="3.8"/>
+		<rect x="75" y="7.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="78.8" y="3.8" class="st68" width="3.8" height="3.8"/>
+		<rect x="82.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="86.4" class="st68" width="3.8" height="3.8"/>
+		<rect x="90.2" class="st68" width="3.8" height="3.8"/>
+		<rect x="94" y="3.8" class="st68" width="3.8" height="3.8"/>
+		<rect x="97.6" y="7.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="97.6" y="11.4" class="st68" width="3.8" height="3.8"/>
+		<rect x="97.6" y="15.1" class="st68" width="3.8" height="3.8"/>
+		<rect x="97.6" y="18.9" class="st68" width="3.8" height="3.8"/>
+		<rect x="94" y="18.9" class="st68" width="3.8" height="3.8"/>
+		<rect x="94" y="22.7" class="st68" width="3.8" height="3.8"/>
+		<rect x="90.2" y="22.7" class="st68" width="3.8" height="3.8"/>
+		<rect x="90.2" y="26.5" class="st68" width="3.8" height="3.8"/>
+		<rect x="86.4" y="30.3" class="st68" width="3.8" height="3.8"/>
+		<rect x="82.6" y="34.1" class="st68" width="3.8" height="3.8"/>
+		<rect x="78.8" y="37.9" class="st68" width="3.8" height="3.8"/>
+		<rect x="75" y="41.6" class="st68" width="3.8" height="3.8"/>
+		<rect x="71.3" y="45.4" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="44.9" y="15.1" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 93.6817 34.0693)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="44.9" y="11.4" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 93.6817 26.4983)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="44.9" y="18.9" transform="matrix(-1 -4.444812e-11 4.444812e-11 -1 93.6817 41.6403)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="48.6" y="18.9" transform="matrix(-1 -4.540913e-11 4.540913e-11 -1 100.9184 41.6403)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="48.6" y="22.7" transform="matrix(-1 -4.444812e-11 4.444812e-11 -1 100.9184 49.2112)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="52.4" y="22.7" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 108.4893 49.2112)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="52.4" y="26.5" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 108.4893 56.7822)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="56.1" y="30.3" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 116.0603 64.3531)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="59.9" y="34.1" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 123.6312 71.9241)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="63.7" y="37.9" transform="matrix(-1 -4.468837e-11 4.468837e-11 -1 131.2022 79.495)" class="st68" width="3.8" height="3.8"/>
+		
+			<rect x="67.5" y="41.6" transform="matrix(-1 -4.516888e-11 4.516888e-11 -1 138.7731 87.066)" class="st68" width="3.8" height="3.8"/>
+		<polygon class="st68" points="48.7,7.6 52.4,3.8 63.7,3.8 75,15.1 75,11.4 82.6,3.8 94,3.8 97.6,7.6 97.6,18.5 90.2,30.3 
+			73.2,47.3 48.6,22.7 		"/>
+	</g>
+	<g>
+		<rect x="0" y="16.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="1.4" y="14.7" class="st68" width="1.5" height="1.5"/>
+		<rect x="2.9" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="4.3" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="5.8" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="7.2" y="14.7" class="st68" width="1.5" height="1.5"/>
+		<rect x="8.7" y="16.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="10.1" y="17.6" class="st68" width="1.5" height="1.5"/>
+		<rect x="11.6" y="16.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="13" y="14.7" class="st68" width="1.5" height="1.5"/>
+		<rect x="14.5" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="15.9" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="17.4" y="13.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="18.9" y="14.7" class="st68" width="1.5" height="1.5"/>
+		<rect x="20.2" y="16.2" class="st68" width="1.5" height="1.5"/>
+		<rect x="20.2" y="17.6" class="st68" width="1.5" height="1.5"/>
+		<rect x="20.2" y="19.1" class="st68" width="1.5" height="1.5"/>
+		<rect x="20.2" y="20.5" class="st68" width="1.5" height="1.5"/>
+		<rect x="18.9" y="20.5" class="st68" width="1.5" height="1.5"/>
+		<rect x="18.9" y="22" class="st68" width="1.5" height="1.5"/>
+		<rect x="17.4" y="22" class="st68" width="1.5" height="1.5"/>
+		<rect x="17.4" y="23.4" class="st68" width="1.5" height="1.5"/>
+		<rect x="15.9" y="24.9" class="st68" width="1.5" height="1.5"/>
+		<rect x="14.5" y="26.4" class="st68" width="1.5" height="1.5"/>
+		<rect x="13" y="27.8" class="st68" width="1.5" height="1.5"/>
+		<rect x="11.6" y="29.3" class="st68" width="1.5" height="1.5"/>
+		<rect x="10.1" y="30.7" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="0" y="19.1" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 1.456 39.6019)" class="st68" width="1.5" height="1.5"/>
+		<rect x="0" y="17.6" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 1.456 36.69)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="0" y="20.5" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 1.456 42.5138)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="1.4" y="20.5" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 4.2393 42.5138)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="1.4" y="22" transform="matrix(-1 -4.435175e-11 4.435175e-11 -1 4.2393 45.4257)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="2.8" y="22" transform="matrix(-1 -4.560142e-11 4.560142e-11 -1 7.1512 45.4257)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="2.8" y="23.4" transform="matrix(-1 -4.435175e-11 4.435175e-11 -1 7.1512 48.3376)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="4.3" y="24.9" transform="matrix(-1 -4.435175e-11 4.435175e-11 -1 10.0631 51.2495)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="5.8" y="26.4" transform="matrix(-1 -4.560142e-11 4.560142e-11 -1 12.975 54.1615)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="7.2" y="27.8" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 15.8869 57.0734)" class="st68" width="1.5" height="1.5"/>
+		
+			<rect x="8.7" y="29.3" transform="matrix(-1 -4.497659e-11 4.497659e-11 -1 18.7988 59.9853)" class="st68" width="1.5" height="1.5"/>
+		<polygon class="st68" points="1.4,16.2 2.9,14.7 7.2,14.7 11.6,19.1 11.6,17.6 14.5,14.7 18.9,14.7 20.2,16.2 20.2,20.4 
+			17.4,24.9 10.9,31.4 1.4,22 		"/>
+	</g>
+</g>
+</svg>
