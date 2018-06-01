@@ -1,0 +1,40 @@
+<body class="inner-page page-signin">
+  <div class="main-wrap">
+    {{> figment/navbar}}
+    <div class="container">
+      <div class="row">
+        <h1 class="center homeText">Figment.Observer</h1>
+      </div>
+    </div>
+
+    <div class="container valign-wrapper">
+      <div class="row">
+        <div class="card transparent hoverable">
+          <div class="card-content white-text center">
+            <span class="center homeText">
+              <h4>Sign In</h4>
+            </span>
+            <form id="signin" name="signin" method="post" action="signin">
+              <div class="row center">
+                <div class="input-field center">
+                  <input name="email" placeholder="Email Address" type="text" class="text validate homeText">
+                </div>
+                <input name="password" placeholder="Password" type="password" class="validate homeText">
+              </div>
+              <div class="center">
+                <input class="btn btn-small transparent" type="submit" value="Sign In">
+              </div>
+            </form>
+            <br>
+            <div class="row center">
+              <p>Don't have an account?
+                <a class="orange-text" href="/signup"> Sign Up!</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{> figment/scripts}}
+</body>

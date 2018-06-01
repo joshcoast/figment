@@ -1,3 +1,7 @@
+.main-nav-bar {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 button.submit {
   float: right;
 }
@@ -46,19 +50,26 @@ button.edit {
   margin-top: 30px;
 }
 
-html, body {
-  background: linear-gradient(#206188 32.65% , #72c4cc 100%);
+html {
+  height: 100vh;
+}
+
+.front-page {
+  background: linear-gradient(#206188 32.65%, #72c4cc 100%);
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  background-attachment: fixed;
 }
 
 h1 {
   font-family: 'PT Mono', monospace;
+  font-size: calc(1em + 5vmin);
 }
 
 .homeText {
   font-family: 'PT Mono', monospace;
   color: #ffecde;
+  size: 50px
 }
 
 .nav-wrapper {
@@ -67,4 +78,132 @@ h1 {
 
 li a {
   color: #ffecde;
+}
+
+.choices {
+  font-family: 'PT Mono', monospace;
+  text-align: center;
+  color: #FFF5EE;
+}
+
+.choiceimg {
+  transition: .25s;
+  width: 80%;
+  max-width: 250px;
+}
+
+.choiceimg:hover {
+  margin: -10px 0 0 0;
+}
+
+.choice {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.choice:last-child {
+  border-right: 0px;
+}
+
+.box {
+  border: none;
+  outline: #ffecde solid 0px;
+  margin: auto;
+  padding: 0px;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+
+.vertical-line {
+  height: 250px;
+  width: 1px;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#genres {
+  display: none;
+}
+
+#close {
+  display: none;
+}
+
+#comment {
+  display: none;
+}
+
+#commentA {
+  background-color: white;
+  margin: 0 auto;
+  height: 150px;
+  width: 60%;
+}
+
+#genreChoices {
+  display: none;
+}
+
+/* -- inside pages -- */
+.inner-page {
+  background-color: #206188;
+}
+
+/* -- Write Page -- */
+
+.write-card {
+  color: #9e9e9e;
+  font-family: 'PT Mono', monospace;
+}
+
+.dropdown-trigger {
+  font-family: 'PT Mono', monospace;
+  color: #9e9e9e;
+}
+
+/* -- Read Stories Page -- */
+.story {
+  margin-top: 20px;
+}
+
+.story-item {
+  padding: 5px;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image::after {
+  content: "";
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000', GradientType=0);
+  z-index: 0;
+}
+
+.card-title {
+  z-index: 1;
+}
+
+.genre-tag {
+  margin-top: 1.5rem;
+}
+
+.card-content::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.listId {
+  display: none;
 }

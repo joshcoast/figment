@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS dev_figment;
+DROP DATABASE IF EXISTS figment_db;
 
-CREATE DATABASE dev_figment;
+CREATE DATABASE figment_db;
 
-USE dev_figment;
+USE figment_db;
 
 CREATE TABLE Authors
     (   
@@ -21,5 +21,6 @@ CREATE TABLE Stories
         title VARCHAR (255) NOT NULL,
         description VARCHAR (255) NOT NULL,
         genre VARCHAR (255) NOT NULL,
+        body MEDIUMTEXT NOT NULL,
         PRIMARY KEY (id)
     );

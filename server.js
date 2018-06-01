@@ -1,37 +1,63 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var app = express();
-var PORT = process.env.PORT || 8080;
-
-//requireing our models for syncing
-var db = require("./models");
+const PORT = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const passport = require('passport')
+const session = require('express-session')
+const bodyParser = require('body-parser')
+const env = require('dotenv').load()
+const exphbs = require('express-handlebars')
+const path = require('path');
+const anime = require('animejs');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
+//For BodyParser
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
 
-app.use(methodOverride('_method'));
+// For Passport
+app.use(session({
+	secret: 'keyboard cat',
+	resave: true,
+	saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
-// Parse application
-app.use(bodyParser.urlencoded({ extended: false }));
+//For Handlebars
+app.set('views', './views')
+app.engine('hbs', exphbs({
+    extname: '.hbs',
+    defaultLayout: 'main'
+}));
+app.set('view engine', '.hbs');
 
-//register a Handlebars view engine
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
 
-//require the express routes from burgers_controller.js set to variable routes
+//Models
+const models = require("./models");
+
+//Routes
+const authRoute = require('./routes/auth.js')(app, passport);
+
+//load passport strategies
+require('./config/passport.js')(passport, models.user);
+
+//require the express routes from partials controller-block to set variable routes
 var routes = require('./controllers/figment_controller.js');
 //use the var routes (express routes) when url returns /index
 app.use('/', routes);
 
 
 //syncing our sequlize models and then starting our express app
-db.sequelize.sync({force: true}).then(function(){
-	app.listen(PORT, function(){
-	console.log("listenning on http://localhost:" + PORT);
-});
-});
+models.sequelize.sync({ force: false }).then(function () {
+	console.log('Nice! Database looks fine')
 
-
+	app.listen(PORT, function () {
+		console.log("listenning on http://localhost:" + PORT);
+	});
+}).catch((err) => {
+	console.log(err, "Something went wrong with the Database Update!")
+});

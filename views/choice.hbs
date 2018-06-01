@@ -1,0 +1,39 @@
+<body class="inner-page page-choice">
+  <div class="main-wrap">
+    {{> figment/navbar}}
+    <div class="container">
+      <div class="row">
+        {{!--
+        <div class="container"> --}}
+          <h1 class="center homeText">Figment.Observer</h1>
+          {{!-- </div> --}}
+        <div class="white-text center box">
+          <h5 class="homeText" id="userName">Hi {{user.firstname}}. Welcome to a new blogging experience.</h5>
+          <h3>
+            <strong> Are you here to:</strong>
+          </h3>
+          <div class="col s12 m5">
+            <div class="choices">
+              <a href="/read">
+                <img class="choiceimg" src="images/reader1-01.png">
+              </a>
+              <h3>read</h3>
+            </div>
+          </div>
+          <div class="col s12 m2 choice ">
+            <div class="vertical_line hide-on-small-only"></div>
+          </div>
+          <div class="col s12 m5">
+            <div class="choices">
+              <a href="/write">
+                <img class="choiceimg" src="images/writer-02.png">
+              </a>
+              <h3>write</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{> figment/scripts}}
+</body>

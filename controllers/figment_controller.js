@@ -1,85 +1,151 @@
 // Dependencies
 // =============================================================
-var express = require('express');
-var router = express.Router();
-var models = require('../models');
-const strategy = require("../public/js/auth-0-variables.js");
-const Auth0Strategy = require("passport-auth0"),
-      passport = require("passport");
-
+const express = require('express');
+const router = express.Router();
+const db = require('../models');
+const animejs = require("animejs");
 
 // Express Routes
 // =============================================================
 
-
-// Each of the below routes just handles the HTML page that the user gets sent to.
-
-// index route loads view.html
 router.get("/", function (req, res) {
-  //retrieve all data from Stories and the authors from the Authors table
-  models.Story.findAll({}).then(function (data) {
-    var hbsObject = { story: data };
+  console.log('user', req.user);
+  db.story.findAll({}).then(function (data) {
+    let hbsObject = {
+      story: data
+    };
     res.render('index', hbsObject);
   }).catch(function (err) {
     console.log(err);
   });
 });
 
-
-router.get('/callback',
-  passport.authenticate('auth0', { failureRedirect: '/login' }),
-  (req, res) => {
-    if (!req.user) {
-      throw new Error('user null');
-    }
-    res.redirect("/");
-  }
-);
-
-router.get('/login', passport.authenticate('auth0', {}), (req, res) => {
-  res.redirect("/");
+//Choice
+router.get("/choice", function (req, res) {
+  db.story.findAll({}).then(function (data) {
+    var hbsObject = {
+      story: data
+    };
+    res.render('choice', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
 });
 
-// Read route loads read.handlebars
+//Write
+router.get("/write/", function (req, res) {
+  db.story.findAll({}).then(function (data) {
+    var hbsObject = {
+      story: data,
+      user: req.user
+    };
+    res.render('write', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
+// Read
 router.get("/read", function (req, res) {
-  //retrieve all data from Stories TODO: add the join to authors
-	models.Story.findAll({}).then(function(data){
-		var hbsObject = { story: data};
-		res.render('read', hbsObject);
-		}).catch(function(err){
-			console.log(err);
-		});
-});
-
-// index route loads view.html
-router.get("/cms", function (req, res) {
-  //retrieve all data from Stories and the authors from the Authors table
-  models.Story.findAll({ include: ['Author'] }).then(function (data) {
-    var hbsObject = { story: data };
-    res.render('cms', hbsObject); //this is where you get the other HB "page"
+  // retrieve all data from Stories TODO: add the join to authors
+  db.story.findAll({}).then(function (data) {
+    var hbsObject = {
+      story: data
+    };
+    res.render('read', hbsObject);
   }).catch(function (err) {
     console.log(err);
   });
 });
 
 
+// --- APIs --- //
 
+// Stories APIs
+router.get("/api/story-index", function (req, res) {
+  console.log("get /api/story-index");
+  var query = {};
+  if (req.query.userid) {
+    query.userid = req.query.userid;
+  }
+  db.Story.findAll({
+    where: query,
+    include: [db.user]
+  }).then(function (dbStory) {
+    res.json(dbStory);
+  });
+});
 
+router.get("/api/comments", function (req, res) {
+  var query = {};
+  if (req.query.author_id) {
+    query.AuthorId = req.query.author_id;
+  }
+  // Here we add an "include" property to our options in our findAll query
+  // We set the value to an array of the models we want to include in a left outer join
+  // In this case, just db.Author
+  db.Comment.findAll({
+    where: query
+    
+  }).then(function (dbStory) {
+    res.json(dbStory);
+  });
+});
 
-// // cms route loads cms.html
-// app.get("/cms", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/cms.html"));
-// });
+router.post("/api/comments", function (req, res) {
+  db.Comment.create(req.body).then(function (dbStory) {
+    res.json(dbStory);
+  });
+});
 
-// // blog route loads blog.html
-// app.get("/story-index", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/story-index.html"));
-// });
+router.get("/api/story-index/:id", function (req, res) {
+  // Here we add an "include" property to our options in our findOne query
+  // We set the value to an array of the models we want to include in a left outer join
+  // In this case, just db.Author
+  db.Story.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.user]
+  }).then(function (dbStory) {
+    res.json(dbStory);
+  });
+});
 
-// // authors route loads author-manager.html
-// app.get("/authors", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-// });
+router.post("/api/story-index", function (req, res) {
+  console.log("post /api/story-index");
+  db.story.create(req.body).then(function (dbStory) {
+    res.json(dbStory);
+  });
+});
 
-//export router to be required in server.js
+// Users APIs
+router.get("/api/authors", function (req, res) {
+  db.user.findAll({
+    //include: [db.story]
+  }).then(function (dbAuthor) {
+    res.json(dbAuthor);
+  });
+});
+
+router.get("/api/authors/:id", function (req, res) {
+  db.user.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.story]
+  }).then(function (dbAuthor) {
+    res.json(dbAuthor);
+  });
+});
+
+router.post("/api/:user_id/write", function (req, res) {
+  db.user.findOne({
+    where: { id: user_id },
+
+  }).then(function (dbAuthor) {
+    res.json(dbAuthor);
+  });
+});
+
 module.exports = router;

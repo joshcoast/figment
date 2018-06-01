@@ -1,28 +1,43 @@
-module.exports = function(sequelize, DataTypes) {
-  var Story = sequelize.define("Story", {
+module.exports = (sequelize, DataTypes) => {
+  const Story = sequelize.define('story', {
+
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
+
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1]
     }
+  }, {
+    underscored: true
   });
 
-  Story.associate = function(models) {
-    // We're saying that a Story should belong to an Author
-    // A Story can't be created without an Author due to the foreign key constraint
-    Story.belongsTo(models.Author, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Story.associate = function (models) {
+  //   // We're saying that a Story should belong to a User
+  //   // A Story can't be created without a User due to the foreign key constraint
+  //   Story.belongsTo(models.user, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Story;
 };
