@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    //ANIMATIONS
+    setInterval(function(){ $("#loginBtn").addClass("animated bounce"); }, 6000);
+    $(".tagLine").addClass("hidden");
+    setInterval(function(){ $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 4000);
+
 
 
     //SCROLLTEXT//
@@ -15,10 +20,14 @@ $(document).ready(function () {
     //     }
     // }
 
-
-    //Mobile Navtigation
-    $('.sidenav').sidenav();
+    function deleteReverse () {
+        
+    }
     
+
+    //Mobile Navigation
+    $('.sidenav').sidenav();
+
     $(".choiceimg").hover(
         function () {
             $(".mainbody").css({

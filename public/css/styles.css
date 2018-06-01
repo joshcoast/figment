@@ -221,3 +221,51 @@ li a {
 .listId {
   display: none;
 }
+
+.bgImage {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+}
+
+.ghost {
+  position: absolute;
+  bottom: 30%;
+  left: 35%;
+  width: 5%;
+}
+
+.ship {
+  position: absolute;
+  bottom: 30%;
+  right: 20%;
+  width: 10%
+}
+
+.sword {
+  position: absolute;
+  bottom: 30%;
+  right: 32%;
+  width: 5%
+}
+
+.heartsLeft {
+  position: absolute;
+  bottom: 45%;
+  left: 40%;
+  width: 5%
+}
+
+.heartsRight {
+  position: absolute;
+  bottom: 45%;
+  right: 40%;
+  width: 5%
+}
+
+.fire {
+  position: absolute;
+  bottom: 30%;
+  right: 40%;
+  width: 5%
+}

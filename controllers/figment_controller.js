@@ -3,7 +3,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const animejs = require("animejs");
 
 // HTML Routes
 // =============================================================
