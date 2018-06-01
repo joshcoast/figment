@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/joshcoast/figment#readme",
   "dependencies": {
+    "animate.css": "^3.6.1",
     "animejs": "^2.2.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",

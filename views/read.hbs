@@ -32,7 +32,7 @@
           <div class="story-item col s12 m6 l4 matchHeight">
             <div class="card">
               <div class="card-image">
-                <img src="https://picsum.photos/420/320?image=2{{this.id}}">
+                <img src="http://picsum.photos/420/320?image=2{{this.id}}">
                 <span class="card-title">{{this.title}}</span>
                 <!-- Modal Trigger -->
                 <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal{{this.id}}">
@@ -41,6 +41,7 @@
               </div>
               <div class="card-content">
                 <p>{{this.description}}</p>
+                <span class="author-name">by: {{user.firstname}} {{user.lastname}}</span>
                 <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
                 <!-- Modal Structure -->
                 <div id="modal{{this.id}}" class="modal modal-fixed-footer">

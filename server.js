@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const express = require('express')
 const app = express()
 const passport = require('passport')
@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 const env = require('dotenv').load()
 const exphbs = require('express-handlebars')
 const path = require('path');
-const anime = require('animejs');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));

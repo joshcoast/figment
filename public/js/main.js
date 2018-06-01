@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    //ANIMATIONS
+    setInterval(function(){ $("#loginBtn").addClass("animated bounce"); }, 6000);
+    $(".tagLine").addClass("hidden");
+    setInterval(function(){ $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 4000);
+
 
 
     //SCROLLTEXT//
@@ -7,18 +12,22 @@ $(document).ready(function () {
     var txt = 'Figment.observer'; /* The text */
     var speed = 200; /* The speed/duration of the effect in milliseconds */
 
-    function typeWriter() {
-        if (i < txt.length) {
-            document.getElementById("textScroll").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
+    // function typeWriter() {
+    //     if (i < txt.length) {
+    //         document.getElementById("textScroll").innerHTML += txt.charAt(i);
+    //         i++;
+    //         setTimeout(typeWriter, speed);
+    //     }
+    // }
+
+    function deleteReverse () {
+        
     }
-
-
-    //Mobile Navtigation
-    $('.sidenav').sidenav();
     
+
+    //Mobile Navigation
+    $('.sidenav').sidenav();
+
     $(".choiceimg").hover(
         function () {
             $(".mainbody").css({
@@ -61,6 +70,6 @@ $(document).ready(function () {
 
     }
     addmenulinks();
-    typeWriter();
+    // typeWriter();
 
 });
