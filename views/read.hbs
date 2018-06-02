@@ -36,7 +36,7 @@
               <div class="card-image">
                 <img src="http://picsum.photos/420/320?image=2{{this.id}}">
                 <span class="card-title">{{this.title}}</span>
-                
+
                 <!-- Modal Trigger -->
                 <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal{{this.id}}">
                   <i class="material-icons">add</i>
@@ -45,9 +45,13 @@
               <div class="card-content">
                 <p>{{this.description}}</p>
                 <p id="identifier">{{this.id}}</p>
-                <button class="down">Dislike</button>
-                <p id="score">0</p>
-                <button class="up">Like</button>
+
+                <div class="voting-section">
+                  <button class="down" data-author-id="{{this.id}}">Dislike</button>
+                  <p id="score" class="current-score">{{this.votes}}</p>
+                  <button class="up" data-author-id="{{this.id}}">Like</button>
+                </div>
+
                 <p id="identifierTwo">{{this.id}}</p>
                 <span class="author-name">by: {{user.firstname}} {{user.lastname}}</span>
                 <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
@@ -71,176 +75,4 @@
   </div>
   {{> figment/scripts}}
   <script src="/js/read.js" type="text/javascript"></script>
-  <script>
-    $("#genre").on("click", genre);
-    $(".title").on("click", readersChoice);
-    $("#humor").on("click", humor);
-    $("#mystery").on("click", mystery);
-    $("#romance").on("click", romance);
-    $("#scifi").on("click", scifi);
-    $("#all").on("click", all);
-    $(".down").on("click", downVote);
-    $(".up").on("click", upVote);
-    $("#alphabet").on("click", alphabet);
-    $("#recent").on("click", mostrecent);
-
-    var score = parseInt($("#score").html());
-
-    function downVote() {
-      score = score - 1;
-      $(this).next().html(score);
-
-      var newData = {
-        id: $(this).prev().html(),
-       
-        votes: score 
-      }
-
-    updateScore(newData);
-    }
-
-      function upVote() {
-      score = score + 1;
-      $(this).prev().html(score);
-  
-  var moreData = {
-        id: $(this).next().html(),
-       
-        votes: score 
-      }
-
-    updateScore(moreData);
-
-    }
-
- 
-
-    function alphabet() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".listId")[i].before($(".title")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-    function mostrecent() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".title")[i].before($(".listId")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-   
-
-    function all() {
-      $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
-    }
-
-    function genre() {
-      $("#genres").css("display", "block");
-    }
-
-    function classify(x) {
-      for (i = 0; i < $(".type").length; i++) {
-        if ($(".type")[i].innerHTML == x) {
-
-          $(".type")[i].parentElement.classList.add(x);
-        }
-
-      }
-    }
-
-    function updateScore(newScore) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/story-index",
-      data: newScore
-    })
-      
-  }
-
-
-    function readersChoice() {
-      $(this).next('.body').css("display", "block");
-      $('.type').css("display", "none");
-    }
-    function humor() {
-      $(".humor").css("display", "block");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function mystery() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "block");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function romance() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "block");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function scifi() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "block");
-
-    }
-
-   
-
-    classify("humor");
-    classify("mystery");
-    classify("romance");
-    classify("sci-fi");
-
-    function sortListDir() {
-      var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
-      list = document.getElementsByClassName("list-group");
-      switching = true;
-      dir = "asc";
-      while (switching) {
-        switching = false;
-        b = document.getElementsByClassName("list-group-item");
-        for (i = 0; i < (b.length - 1); i++) {
-          shouldSwitch = false;
-
-          if (dir == "asc") {
-            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          } else if (dir == "desc") {
-            if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          }
-        }
-        if (shouldSwitch) {
-
-          b[i].parentNode.insertBefore(b[i + 1], b[i]);
-          switching = true;
-          switchcount++;
-        } else {
-
-          if (switchcount == 0 && dir == "asc") {
-            dir = "desc";
-            switching = true;
-          }
-        }
-      }
-    }
-  </script> 
 </body>

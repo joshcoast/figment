@@ -59,24 +59,51 @@ router.get("/read", function (req, res) {
   });
 });
 
+router.get("/read/votes", function (req, res) {
+  db.story.findAll({
+    include: [db.user],
+    order: [
+      ['votes', 'DESC']
+    ],
+  }).then(function (data) {
+    var hbsObject = {
+      story: data,
+      user: req.user
+    };
+    res.render('read', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
 
 // API Routes
 // =============================================================
 
-// Stories APIs
-router.get("/api/story-index", function (req, res) {
-  var query = {};
-  if (req.query.userid) {
-    query.userid = req.query.userid;
-  }
-  db.Story.findAll({
-    where: query,
-    include: [db.User]
-  }).then(function (dbStory) {
-    res.json(dbStory);
+// --- Stories APIs
+
+// Get stories by votes
+router.get("/api/story/votes", function (req, res) {
+  db.story.findAll({
+    order: [
+      ['votes', 'DESC']
+    ],
+    include: [db.user]
+  }).then(function (dbStories) {
+    res.json(dbStories);
   });
 });
 
+// Get stories by creation order
+router.get("/api/story", function (req, res) {
+  db.story.findAll({
+    include: [db.user]
+  }).then(function (dbStories) {
+    res.json(dbStories);
+  });
+});
+
+// Post a story
 router.post("/api/story-index", function (req, res) {
   console.log(req.body);
   db.story.create({
@@ -92,6 +119,7 @@ router.post("/api/story-index", function (req, res) {
   });
 });
 
+// Update A story
 router.put("/api/story-index", function(req, res) {
   db.story.update(req.body,
     {
@@ -105,84 +133,18 @@ router.put("/api/story-index", function(req, res) {
 });
 
 
+// -- Users APIs
+
+// Get all useres
+router.get("/api/authors", function (req, res) {
+  db.user.findAll({
+    //include: [db.story]
+  }).then(function (dbAuthor) {
+    res.json(dbAuthor);
+  });
+});
 
 
-// router.get("/api/comments", function (req, res) {
-//   var query = {};
-//   if (req.query.author_id) {
-//     query.AuthorId = req.query.author_id;
-//   }
-//   // Here we add an "include" property to our options in our findAll query
-//   // We set the value to an array of the models we want to include in a left outer join
-//   // In this case, just db.Author
-//   db.Comment.findAll({
-//     where: query
-    
-//   }).then(function (dbStory) {
-//     res.json(dbStory);
-//   });
-// });
 
-// router.post("/api/comments", function (req, res) {
-//   db.Comment.create(req.body).then(function (dbStory) {
-//     res.json(dbStory);
-//   });
-// });
-
-// router.get("/api/story-index/:id", function (req, res) {
-//   // Here we add an "include" property to our options in our findOne query
-//   // We set the value to an array of the models we want to include in a left outer join
-//   // In this case, just db.Author
-//   db.Story.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//     include: [db.user]
-//   }).then(function (dbStory) {
-//     res.json(dbStory);
-//   });
-// });
-
-// // router.post("/api/story-index", function (req, res) {
-// //   const storyBody = {
-// //     UserId: req.user.id,
-// //     title: req.body.storyTitle,
-// //     description: req.body.storyDescription,
-// //     genre: req.body.storyGenre,
-// //     body: req.body.storyBody
-// //   }
-// //   db.story.create(req.storyBody).then(function (dbStory) {
-// //     res.json(dbStory);
-// //   });
-// // });
-
-// // Users APIs
-// router.get("/api/authors", function (req, res) {
-//   db.user.findAll({
-//     //include: [db.story]
-//   }).then(function (dbAuthor) {
-//     res.json(dbAuthor);
-//   });
-// });
-
-// router.get("/api/authors/:id", function (req, res) {
-//   db.user.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//     include: [db.story]
-//   }).then(function (dbAuthor) {
-//     res.json(dbAuthor);
-//   });
-// });
-
-// router.post("/api/:user_id/write", function (req, res) {
-//   db.user.findOne({
-//     where: { id: user_id },
-
-//   }).then(function (dbAuthor) {
-//     res.json(dbAuthor);
-//   });
-// });
 
 module.exports = router;
