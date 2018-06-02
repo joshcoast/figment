@@ -278,3 +278,12 @@ li a {
   cursor: pointer;
   color: red;
 }
+.dislike {
+  cursor: pointer;
+  color: gray;
+}
+
+.disliked {
+  cursor: pointer;
+  color:darkcyan;
+}

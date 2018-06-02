@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
     $('.like').click(function() {
-
         $(this).toggleClass('liked');
+    });
+
+    $('.dislike').click(function() {
+        $(this).toggleClass('disliked');
+    
     });
 
 
