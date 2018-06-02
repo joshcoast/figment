@@ -84,7 +84,6 @@
     $("#recent").on("click", mostrecent);
 
     var score = parseInt($("#score").html());
-    var strange = [];
 
     function downVote() {
       score = score - 1;
@@ -92,10 +91,7 @@
 
       var newData = {
         id: $(this).prev().html(),
-        title: "Title",
-        genre: "Genre",
-        description: "Description",
-        body: "Body",
+       
         votes: score 
       }
 
@@ -107,12 +103,7 @@
       $(this).prev().html(score);
     }
 
-    mercy();
-
-    function mercy() {
-      strange.push($(".story-item"));
-      console.log(strange);
-    }
+ 
 
     function alphabet() {
       $("#genres").css("display", "none");
