@@ -13,25 +13,27 @@ $(document).ready(function () {
     //ANIMATIONS
     setInterval(function(){ $("#loginBtn").addClass("animated bounce"); }, 6000);
     $(".tagLine").addClass("hidden");
-    setInterval(function(){ $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 4000);
+    $(".ship").addClass("hidden");
+    $(".ghost").addClass("hidden");
+    $(".sword").addClass("hidden");
+    setInterval(function(){ $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 2500);
+    setInterval(function(){ $(".ship").removeClass("hidden"); }, 4500);
+    setInterval(function(){ $(".ghost").removeClass("hidden"); }, 3500);
+    setInterval(function(){ $(".sword").removeClass("hidden"); }, 4000);
 
 
 
     //SCROLLTEXT//
     var i = 0;
     var txt = 'Figment.observer'; /* The text */
-    var speed = 200; /* The speed/duration of the effect in milliseconds */
+    var speed = 150; /* The speed/duration of the effect in milliseconds */
 
-    // function typeWriter() {
-    //     if (i < txt.length) {
-    //         document.getElementById("textScroll").innerHTML += txt.charAt(i);
-    //         i++;
-    //         setTimeout(typeWriter, speed);
-    //     }
-    // }
-
-    function deleteReverse () {
-        
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("textScroll").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
     }
 
     //Mobile Navigation
@@ -81,6 +83,6 @@ $(document).ready(function () {
 
     }
     addmenulinks();
-    // typeWriter();
+    typeWriter();
 
 });

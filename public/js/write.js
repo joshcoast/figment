@@ -6,18 +6,39 @@ $(document).ready(function() {
 
   //var currentUser = $('#storyForm').data( "userid" );
 
+  /*function run() {
+    var text = document.getElementById('sourceTA').value,
+        target = document.getElementById('targetDiv'),
+        converter = new showdown.Converter(),
+        html = converter.makeHtml(text);
+      
+      target.innerHTML = html;
+  }*/
+
   $("#submit").on("click", function(event) {
+
+    /*var text = document.getElementById('sourceTA').value,
+        target = document.getElementById('targetDiv'),
+        converter = new showdown.Converter(),
+        html = converter.makeHtml(text);
+      
+      target.innerHTML = html;*/
 
     const storyTitle = $( "#storyTitle" ).val();
     const storyDescription = $( "#storyDescription" ).val();
     const storyGenre = $( "#genreChoices" ).val();
-    const storyBody = $( "#storyBody" ).val();
+    const storyBody = $( "#sourceTA" ).val();
+    const converter = new showdown.Converter();
+    //var turndownService = new TurndownService();
+    const html = converter.makeHtml(storyBody);
+    //const markdown = turndownService.turndown(html);
+    
 
     const storyData = {
       title: storyTitle,
       description: storyDescription,
       genre: storyGenre,
-      body: storyBody,
+      body: html,
       votes: 0
     };
 

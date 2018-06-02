@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const env = require('dotenv').load()
 const exphbs = require('express-handlebars')
 const path = require('path');
+const showdown = require('showdown');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));

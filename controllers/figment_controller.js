@@ -112,7 +112,7 @@ router.post("/api/story-index", function (req, res) {
     description: req.body.description,
     genre: req.body.genre,
     body: req.body.body,
-    votes: req.body.votes
+    votes: 0
   })
   .then(function(dbStory) {
     res.json(dbStory);
