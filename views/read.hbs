@@ -61,19 +61,22 @@
                   <p>{{this.description}}</p>
                   <p id="identifier">{{this.id}}</p>
 
-                  <div class="voting-section">
-                    <button class="down" data-author-id="{{this.id}}">Dislike</button>
-                    <p id="score" class="current-score">{{this.votes}}</p>
-                    <button class="up" data-author-id="{{this.id}}">Like</button>
-                  </div>
 
-                  <p id="identifierTwo">{{this.id}}</p>
-                  <p class="author-name">by: {{user.firstname}} {{user.lastname}}</p>
+
+                <p id="identifierTwo">{{this.id}}</p>
+                <p class="author-name">by: {{user.firstname}} {{user.lastname}}</p>
                 </div>
 
-                <i class="material-icons like">favorite</i>
-                <i class="material-icons dislike">sentiment_very_dissatisfied</i>
-                <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+                  <div class="voting-section">
+                    
+                  <i class="material-icons disliked down" data-author-id="{{this.id}}">sentiment_very_dissatisfied</i>
+                  <a id="score" class="current-score">{{this.votes}}</a>
+                  <i class="material-icons liked up" data-author-id="{{this.id}}">favorite</i>
+                  <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+                </div>
+                {{!-- <i class="material-icons dislike">sentiment_very_dissatisfied</i>
+                <i class="material-icons like">favorite</i> --}}
+                
 
                 <!-- Modal Structure -->
                 <div id="modal{{this.id}}" class="modal modal-fixed-footer">
