@@ -15,33 +15,51 @@
         </div>
       </div>
       <div class="center" id="menu">
-        <a class="btn waves-effect btn-large transparent" id="genre">Genre</a>
+        <a class="dropdown-trigger btn waves-effect btn-large transparent" id="genre" data-target="dropdown1">Genre<i class="material-icons right">arrow_drop_down</i></a>
         <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
         <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
       </div>
-      <ul id="genres">
-        <li id="all">All</li>
-        <li id="humor">Humor</li>
-        <li id="mystery">Mystery</li>
-        <li id="romance">Romance</li>
-        <li id="scifi">Sci-Fi</li>
+
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a id="all" >All</a></li>
+        <li><a id="humor">Humor</a></li>
+        <li><a id="mystery">Mystery</a></li>
+        <li><a id="romance">Romance</a></li>
+        <li><a id="scifi">Sci-Fi</a></li>
       </ul>
       <div class="story">
         <div class="row">
           {{#each story}}
           <div class="story-item col s12 m6 l4 matchHeight">
+            <p class="type">{{this.genre}}</p>
             <div class="card">
               <div class="card-image">
-                <img src="https://picsum.photos/420/320?image=2{{this.id}}">
+                <img src="http://picsum.photos/420/320?image=2{{this.id}}">
                 <span class="card-title">{{this.title}}</span>
+
                 <!-- Modal Trigger -->
                 <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal{{this.id}}">
                   <i class="material-icons">add</i>
                 </a>
               </div>
               <div class="card-content">
+                <div class="row">
                 <p>{{this.description}}</p>
+                <p id="identifier">{{this.id}}</p>
+
+                <div class="voting-section">
+                  <button class="down" data-author-id="{{this.id}}">Dislike</button>
+                  <p id="score" class="current-score">{{this.votes}}</p>
+                  <button class="up" data-author-id="{{this.id}}">Like</button>
+                </div>
+
+                <p id="identifierTwo">{{this.id}}</p>
+                <p class="author-name">by: {{user.firstname}} {{user.lastname}}</p>
+                </div>
+
+                <i class="material-icons like">favorite</i><i class="material-icons dislike">sentiment_very_dissatisfied</i>
                 <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+
                 <!-- Modal Structure -->
                 <div id="modal{{this.id}}" class="modal modal-fixed-footer">
                   <div class="modal-content">
@@ -62,143 +80,4 @@
   </div>
   {{> figment/scripts}}
   <script src="/js/read.js" type="text/javascript"></script>
-  <script>
-    $("#genre").on("click", genre);
-    $(".title").on("click", readersChoice);
-    $("#humor").on("click", humor);
-    $("#mystery").on("click", mystery);
-    $("#romance").on("click", romance);
-    $("#scifi").on("click", scifi);
-    $("#close").on("click", close);
-    $("#all").on("click", all);
-    $("#commentB").on("click", comment);
-    $("#alphabet").on("click", alphabet);
-    $("#recent").on("click", mostrecent);
-
-    function alphabet() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".listId")[i].before($(".title")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-    function mostrecent() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".title")[i].before($(".listId")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-    function comment() {
-      let commentData = {
-        reader: "Ya boy",
-        feedback: $("#commentA").val().trim()
-      };
-      $("#comment").css("display", "none");
-      $.post("/api/comments", commentData)
-        .then(alert("Comment Submitted"));
-    }
-
-    function all() {
-      $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
-    }
-
-    function genre() {
-      $("#genres").css("display", "block");
-    }
-
-    function classify(x) {
-      for (i = 0; i < $(".type").length; i++) {
-        if ($(".type")[i].innerHTML == x) {
-
-          $(".type")[i].parentElement.classList.add(x);
-        }
-
-      }
-    }
-
-    function readersChoice() {
-      $(this).next('.body').css("display", "block");
-      $('.type').css("display", "none");
-      $('#close', '#comment').css("display", "block");
-    }
-    function humor() {
-      $(".humor").css("display", "block");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function mystery() {
-      $(".mystery").css("display", "block");
-      $('.humor', '.romance', '.sci-fi').css("display", "none");
-    }
-
-    function romance() {
-      $(".romance").css("display", "block");
-      $('.mystery', '.humor', '.sci-fi').css("display", "none");
-    }
-
-    function scifi() {
-      $(".sci-fi").css("display", "block");
-      $('.mystery', '.humor', '.romance').css("display", "none");
-
-    }
-
-    function close() {
-      $("#close").css("display", "none");
-      $(".type").css("display", "block");
-      $(".body").css("display", "none");
-      $("#comment").css("display", "none");
-    }
-
-    classify("humor");
-    classify("mystery");
-    classify("romance");
-    classify("sci-fi");
-
-    function sortListDir() {
-      var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
-      list = document.getElementsByClassName("list-group");
-      switching = true;
-      dir = "asc";
-      while (switching) {
-        switching = false;
-        b = document.getElementsByClassName("list-group-item");
-        for (i = 0; i < (b.length - 1); i++) {
-          shouldSwitch = false;
-
-          if (dir == "asc") {
-            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          } else if (dir == "desc") {
-            if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          }
-        }
-        if (shouldSwitch) {
-
-          b[i].parentNode.insertBefore(b[i + 1], b[i]);
-          switching = true;
-          switchcount++;
-        } else {
-
-          if (switchcount == 0 && dir == "asc") {
-            dir = "desc";
-            switching = true;
-          }
-        }
-      }
-    }
-  </script> 
 </body>

@@ -194,8 +194,18 @@ li a {
   z-index: 1;
 }
 
-.genre-tag {
+.author-name {
+  opacity: .75;
+  font-weight: 300;
+  font-size: 0.8rem;
   margin-top: 1.5rem;
+  min-width: 3rem;
+  padding: 0 6px 0 0;
+  text-align: center;
+  line-height: 22px;
+  height: 22px;
+  float: left;
+  box-sizing: border-box;
 }
 
 .card-content::after {
@@ -283,4 +293,39 @@ li a {
   -moz-animation-duration: 10;
   -ms-transition-animation-duration: 10s;
   opacity: .1;
+  width: 5%
+}
+
+.type {
+  display: none;
+}
+
+#identifier {
+  display: none;
+}
+
+#identifierTwo  {
+  display: none;
+}
+
+#genre{
+  color:white;
+}
+
+.like {
+  cursor: pointer;
+  color: gray;
+}
+.liked {
+  cursor: pointer;
+  color: red;
+}
+.dislike {
+  cursor: pointer;
+  color: gray;
+}
+
+.disliked {
+  cursor: pointer;
+  color:darkcyan;
 }

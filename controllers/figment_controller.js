@@ -1,12 +1,14 @@
+
 // Dependencies
 // =============================================================
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-// Express Routes
+// HTML Routes
 // =============================================================
 
+// Home Landing
 router.get("/", function (req, res) {
   console.log('user', req.user);
   db.story.findAll({}).then(function (data) {
@@ -32,7 +34,7 @@ router.get("/choice", function (req, res) {
 });
 
 //Write
-router.get("/write/", function (req, res) {
+router.get("/write", function (req, res) {
   db.story.findAll({}).then(function (data) {
     var hbsObject = {
       story: data,
@@ -46,10 +48,27 @@ router.get("/write/", function (req, res) {
 
 // Read
 router.get("/read", function (req, res) {
-  // retrieve all data from Stories TODO: add the join to authors
-  db.story.findAll({}).then(function (data) {
+  db.story.findAll({include: [db.user]}).then(function (data) {
     var hbsObject = {
-      story: data
+      story: data,
+      user: req.user
+    };
+    res.render('read', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
+router.get("/read/votes", function (req, res) {
+  db.story.findAll({
+    include: [db.user],
+    order: [
+      ['votes', 'DESC']
+    ],
+  }).then(function (data) {
+    var hbsObject = {
+      story: data,
+      user: req.user
     };
     res.render('read', hbsObject);
   }).catch(function (err) {
@@ -58,67 +77,65 @@ router.get("/read", function (req, res) {
 });
 
 
-// --- APIs --- //
+// API Routes
+// =============================================================
 
-// Stories APIs
-router.get("/api/story-index", function (req, res) {
-  console.log("get /api/story-index");
-  var query = {};
-  if (req.query.userid) {
-    query.userid = req.query.userid;
-  }
-  db.Story.findAll({
-    where: query,
+// --- Stories APIs
+
+// Get stories by votes
+router.get("/api/story/votes", function (req, res) {
+  db.story.findAll({
+    order: [
+      ['votes', 'DESC']
+    ],
     include: [db.user]
-  }).then(function (dbStory) {
-    res.json(dbStory);
+  }).then(function (dbStories) {
+    res.json(dbStories);
   });
 });
 
-router.get("/api/comments", function (req, res) {
-  var query = {};
-  if (req.query.author_id) {
-    query.AuthorId = req.query.author_id;
-  }
-  // Here we add an "include" property to our options in our findAll query
-  // We set the value to an array of the models we want to include in a left outer join
-  // In this case, just db.Author
-  db.Comment.findAll({
-    where: query
-    
-  }).then(function (dbStory) {
-    res.json(dbStory);
-  });
-});
-
-router.post("/api/comments", function (req, res) {
-  db.Comment.create(req.body).then(function (dbStory) {
-    res.json(dbStory);
-  });
-});
-
-router.get("/api/story-index/:id", function (req, res) {
-  // Here we add an "include" property to our options in our findOne query
-  // We set the value to an array of the models we want to include in a left outer join
-  // In this case, just db.Author
-  db.Story.findOne({
-    where: {
-      id: req.params.id
-    },
+// Get stories by creation order
+router.get("/api/story", function (req, res) {
+  db.story.findAll({
     include: [db.user]
-  }).then(function (dbStory) {
-    res.json(dbStory);
+  }).then(function (dbStories) {
+    res.json(dbStories);
   });
 });
 
+// Post a story
 router.post("/api/story-index", function (req, res) {
-  console.log("post /api/story-index");
-  db.story.create(req.body).then(function (dbStory) {
+  console.log(req.body);
+  db.story.create({
+    user_id: req.user.id,
+    title: req.body.title,
+    description: req.body.description,
+    genre: req.body.genre,
+    body: req.body.body,
+    votes: req.body.votes
+  })
+  .then(function(dbStory) {
     res.json(dbStory);
   });
 });
 
-// Users APIs
+// Update A story
+router.put("/api/story-index", function(req, res) {
+  db.story.update(req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(function(dbStory) {
+      res.json(dbStory);
+    });
+});
+
+
+// -- Users APIs
+
+// Get all useres
 router.get("/api/authors", function (req, res) {
   db.user.findAll({
     //include: [db.story]
@@ -127,24 +144,7 @@ router.get("/api/authors", function (req, res) {
   });
 });
 
-router.get("/api/authors/:id", function (req, res) {
-  db.user.findOne({
-    where: {
-      id: req.params.id
-    },
-    include: [db.story]
-  }).then(function (dbAuthor) {
-    res.json(dbAuthor);
-  });
-});
 
-router.post("/api/:user_id/write", function (req, res) {
-  db.user.findOne({
-    where: { id: user_id },
 
-  }).then(function (dbAuthor) {
-    res.json(dbAuthor);
-  });
-});
 
 module.exports = router;

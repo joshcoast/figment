@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $('select').formSelect();
 
-  var currentUser = $('#storyForm').data( "userid" );
+  //var currentUser = $('#storyForm').data( "userid" );
 
   $("#submit").on("click", function(event) {
 
@@ -13,16 +13,16 @@ $(document).ready(function() {
     const storyGenre = $( "#genreChoices" ).val();
     const storyBody = $( "#storyBody" ).val();
 
-    let storyData = {
+    const storyData = {
       title: storyTitle,
       description: storyDescription,
       genre: storyGenre,
       body: storyBody,
-      user_id: currentUser
+      votes: 0
     };
 
-    $.post("/api/story-index", storyData)
-      .then(getAuthors);
+    $.post("/api/story-index/", storyData).then(getAuthors);
+    
   });
 
   function getAuthors(){
@@ -30,12 +30,12 @@ $(document).ready(function() {
   }
 
 
-//   // Submits a new story and brings user to story-index page upon completion
-//   function submitPost(story) {
-//     $.post("/api/story-index", story, function() {
-//       window.location.href = "/story-index";
-//     });
-//   }
+  // Submits a new story and brings user to story-index page upon completion
+  // function submitPost(story) {
+  //   $.post("/api/story-index", story, function() {
+  //     window.location.href = "/story-index";
+  //   });
+  // }
 
 
 
