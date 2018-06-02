@@ -83,6 +83,6 @@ $(document).ready(function () {
 
     }
     addmenulinks();
-    // typeWriter();
+    typeWriter();
 
 });
