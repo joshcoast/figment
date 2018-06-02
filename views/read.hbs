@@ -46,7 +46,7 @@
                 <p>{{this.description}}</p>
                 <p id="identifier">{{this.id}}</p>
                 <button class="down">Dislike</button>
-                <p id="score">0</p>
+                <p class="score">{{this.votes}}</p>
                 <button class="up">Like</button>
                 <p id="identifierTwo">{{this.id}}</p>
                 <span class="author-name">by: {{user.firstname}} {{user.lastname}}</span>
@@ -83,6 +83,19 @@
     $(".up").on("click", upVote);
     $("#alphabet").on("click", alphabet);
     $("#recent").on("click", mostrecent);
+   /* var scoreArray = [];
+
+    scorePush();
+
+    function scorePush() {
+      for (i = 0; i < $(".score").length; i++) {
+
+      scoreArray.push($(".score")[i].innerHTML);
+      scoreArray.sort();
+      }
+      
+      console.log(scoreArray);
+    }*/
 
     var score = parseInt($("#score").html());
 
