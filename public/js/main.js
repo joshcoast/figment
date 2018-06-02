@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    $('.like').click(function() {
+        $(this).toggleClass('liked');
+    });
+
+    $('.dislike').click(function() {
+        $(this).toggleClass('disliked');
+    
+    });
+
+
     //ANIMATIONS
     setInterval(function(){ $("#loginBtn").addClass("animated bounce"); }, 6000);
     $(".tagLine").addClass("hidden");
@@ -23,10 +33,11 @@ $(document).ready(function () {
     function deleteReverse () {
         
     }
-    
 
     //Mobile Navigation
     $('.sidenav').sidenav();
+    //genre dropdown
+    $(".dropdown-trigger").dropdown();
 
     $(".choiceimg").hover(
         function () {

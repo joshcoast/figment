@@ -208,10 +208,6 @@ li a {
   box-sizing: border-box;
 }
 
-.genre-tag {
-  margin-top: 1.5rem;
-}
-
 .card-content::after {
   clear: both;
   content: "";
@@ -280,4 +276,26 @@ li a {
 
 #identifierTwo  {
   display: none;
+}
+
+#genre{
+  color:white;
+}
+
+.like {
+  cursor: pointer;
+  color: gray;
+}
+.liked {
+  cursor: pointer;
+  color: red;
+}
+.dislike {
+  cursor: pointer;
+  color: gray;
+}
+
+.disliked {
+  cursor: pointer;
+  color:darkcyan;
 }
