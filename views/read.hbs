@@ -48,6 +48,7 @@
                 <button class="down">Dislike</button>
                 <p id="score">0</p>
                 <button class="up">Like</button>
+                <p id="identifierTwo">{{this.id}}</p>
                 <span class="author-name">by: {{user.firstname}} {{user.lastname}}</span>
                 <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
                 <!-- Modal Structure -->
@@ -101,6 +102,15 @@
       function upVote() {
       score = score + 1;
       $(this).prev().html(score);
+  
+  var moreData = {
+        id: $(this).next().html(),
+       
+        votes: score 
+      }
+
+    updateScore(moreData);
+
     }
 
  
