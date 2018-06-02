@@ -12,7 +12,7 @@ $(document).ready(function () {
  
  touchdown();
 
-touchdown();
+
   // Votes!
   $(".down").on("click", downVote);
   $(".up").on("click", upVote);
