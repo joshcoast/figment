@@ -2,7 +2,10 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "port": 8889,
+=======
+>>>>>>> f68931134e050a012a39fc0698c381189da615a9
     "database": "figment_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
