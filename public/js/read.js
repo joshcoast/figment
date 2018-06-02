@@ -29,7 +29,7 @@ $(document).ready(function () {
     let currentScore = $(this).siblings(".current-score").html();
     let storyId = $(this).data('author-id');
     currentScore = parseInt(currentScore) - 1;
-    $(this).next().html(currentScore);
+    $(this).siblings(".current-score").html(currentScore);
     var newData = {
       id: storyId,
       votes: currentScore
@@ -41,7 +41,7 @@ $(document).ready(function () {
     let currentScore = $(this).siblings(".current-score").html();
     let storyId = $(this).data('author-id');
     currentScore = parseInt(currentScore) + 1;
-    $(this).prev().html(currentScore);
+    $(this).siblings(".current-score").html(currentScore);
     var moreData = {
       id: storyId,
       votes: currentScore
@@ -58,47 +58,7 @@ $(document).ready(function () {
   }
 
   // Sort by Genre! 
-
-  // $("#genre").on("click", genre);
-  // $(".title").on("click", readersChoice);
-  // $("#alphabet").on("click", alphabet);
-  // $("#recent").on("click", mostrecent);
-
-  // function alphabet() {
-  //   $("#genres").hide();
-  //   for (i = 0; i < $(".list-group-item").length; i++) {
-  //     $(".listId")[i].before($(".title")[i]);
-  //     console.log($(".list-group-item")[i]);
-  //   }
-  //   sortListDir();
-  // }
-
-  // function mostrecent() {
-  //   $("#genres").hide();
-  //   for (i = 0; i < $(".list-group-item").length; i++) {
-  //     $(".title")[i].before($(".listId")[i]);
-  //     console.log($(".list-group-item")[i]);
-  //   }
-  //   sortListDir();
-  // }
-
-  // function genre() {
-  //   $("#genres").show();
-  // }
-
-  // function classify(x) {
-  //   for (i = 0; i < $(".type").length; i++) {
-  //     if ($(".type")[i].innerHTML == x) {
-  //       $(".type")[i].parentElement.classList.add(x);
-  //     }
-  //   }
-  // }
-
-  // function readersChoice() {
-  //   $(this).next('.body').show();
-  //   $('.type').hide();
-  // }
-
+  
   $("#humor").on("click", humor);
   $("#mystery").on("click", mystery);
   $("#romance").on("click", romance);

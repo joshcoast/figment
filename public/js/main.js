@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $(".liked").click(function(){
-        var div = $(".liked");
-        div.animate({opacity: '0.4'}, "fast");
-		div.animate({opacity: '0.8'}, "fast");
+      //var div = $(".liked");
+      $(this).animate({opacity: '0.4'}, "fast");
+		  $(this).animate({opacity: '0.8'}, "fast");
     });
 
 
