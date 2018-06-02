@@ -1,21 +1,21 @@
 $(document).ready(function () {
-    $(".liked").click(function(){
-      //var div = $(".liked");
-      $(this).animate({opacity: '0.4'}, "fast");
-		  $(this).animate({opacity: '0.8'}, "fast");
+    $(".liked").click(function () {
+        //var div = $(".liked");
+        $(this).animate({ opacity: '0.4' }, "fast");
+        $(this).animate({ opacity: '0.8' }, "fast");
     });
 
 
     //ANIMATIONS
-    setInterval(function(){ $("#loginBtn").addClass("animated bounce"); }, 6000);
+    setInterval(function () { $("#loginBtn").addClass("animated bounce"); }, 6000);
     $(".tagLine").addClass("hidden");
     $(".ship").addClass("hidden");
     $(".ghost").addClass("hidden");
     $(".sword").addClass("hidden");
-    setInterval(function(){ $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 2500);
-    setInterval(function(){ $(".ship").removeClass("hidden"); }, 4500);
-    setInterval(function(){ $(".ghost").removeClass("hidden"); }, 3500);
-    setInterval(function(){ $(".sword").removeClass("hidden"); }, 4000);
+    setInterval(function () { $(".tagLine").removeClass("hidden").addClass("animated zoomInLeft"); }, 2500);
+    setInterval(function () { $(".ship").removeClass("hidden"); }, 4500);
+    setInterval(function () { $(".ghost").removeClass("hidden"); }, 3500);
+    setInterval(function () { $(".sword").removeClass("hidden"); }, 4000);
 
 
 
@@ -79,6 +79,11 @@ $(document).ready(function () {
 
     }
     addmenulinks();
-    typeWriter();
+
+    if ($("#scrollText").length) {
+
+        $("#scrollText").show();
+
+    }
 
 });
