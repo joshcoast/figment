@@ -312,10 +312,6 @@ li a {
   color:white;
 }
 
-.voting-section {
-
-}
-
 .current-score {
   display: block;
   float: left;
@@ -358,4 +354,12 @@ display: inline-block;
 }
 .current-score{
   display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .ship {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
 }

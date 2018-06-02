@@ -1,8 +1,9 @@
 $(document).ready(function() {
   //plugin settings 
   $('textarea#storyBody').characterCounter();
-
   $('select').formSelect();
+  $('.modal').modal();
+  $('.matchHeight').matchHeight();
 
   //var currentUser = $('#storyForm').data( "userid" );
 
@@ -60,9 +61,7 @@ $(document).ready(function() {
 
 
 
-//plug-in scripts
-$('.modal').modal();
-$('.matchHeight').matchHeight();
+
 
 });
 
