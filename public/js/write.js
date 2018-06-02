@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //plugin settings 
-  $('textarea#storyBody').characterCounter();
+  $('textarea#sourceTA').characterCounter();
   $('select').formSelect();
   $('.modal').modal();
   $('.matchHeight').matchHeight();
