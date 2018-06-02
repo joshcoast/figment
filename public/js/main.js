@@ -1,12 +1,8 @@
 $(document).ready(function () {
-
-    $('.like').click(function() {
-        $(this).toggleClass('liked');
-    });
-
-    $('.dislike').click(function() {
-        $(this).toggleClass('disliked');
-    
+    $(".liked").click(function(){
+      //var div = $(".liked");
+      $(this).animate({opacity: '0.4'}, "fast");
+		  $(this).animate({opacity: '0.8'}, "fast");
     });
 
 

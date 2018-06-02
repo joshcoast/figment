@@ -20,7 +20,6 @@ $(document).ready(function () {
   //     window.location.href = "/story-index";
   //   });
   // }
-  console.log("hotdog");
 
   // Votes!
   $(".down").on("click", downVote);
@@ -30,7 +29,7 @@ $(document).ready(function () {
     let currentScore = $(this).siblings(".current-score").html();
     let storyId = $(this).data('author-id');
     currentScore = parseInt(currentScore) - 1;
-    $(this).next().html(currentScore);
+    $(this).siblings(".current-score").html(currentScore);
     var newData = {
       id: storyId,
       votes: currentScore
@@ -42,7 +41,7 @@ $(document).ready(function () {
     let currentScore = $(this).siblings(".current-score").html();
     let storyId = $(this).data('author-id');
     currentScore = parseInt(currentScore) + 1;
-    $(this).prev().html(currentScore);
+    $(this).siblings(".current-score").html(currentScore);
     var moreData = {
       id: storyId,
       votes: currentScore
@@ -58,90 +57,56 @@ $(document).ready(function () {
     })
   }
 
-  // Other stuff! 
-
-  $("#genre").on("click", genre);
-  $(".title").on("click", readersChoice);
+  // Sort by Genre! 
+  
   $("#humor").on("click", humor);
   $("#mystery").on("click", mystery);
   $("#romance").on("click", romance);
   $("#scifi").on("click", scifi);
   $("#all").on("click", all);
-  $("#alphabet").on("click", alphabet);
-  $("#recent").on("click", mostrecent);
-
-  function alphabet() {
-    $("#genres").css("display", "none");
-    for (i = 0; i < $(".list-group-item").length; i++) {
-      $(".listId")[i].before($(".title")[i]);
-      console.log($(".list-group-item")[i]);
-    }
-    sortListDir();
-  }
-
-  function mostrecent() {
-    $("#genres").css("display", "none");
-    for (i = 0; i < $(".list-group-item").length; i++) {
-      $(".title")[i].before($(".listId")[i]);
-      console.log($(".list-group-item")[i]);
-    }
-    sortListDir();
-  }
 
   function all() {
-    $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
-  }
-
-  function genre() {
-    $("#genres").css("display", "block");
-  }
-
-  function classify(x) {
-    for (i = 0; i < $(".type").length; i++) {
-      if ($(".type")[i].innerHTML == x) {
-        $(".type")[i].parentElement.classList.add(x);
-      }
-    }
-  }
-
-  function readersChoice() {
-    $(this).next('.body').css("display", "block");
-    $('.type').css("display", "none");
+    console.log("show all")
+    $(".Humor").show(250);
+    $(".Mystery").show(250);
+    $(".Romance").show(250);
+    $(".Sci-Fi").show(250);
   }
 
   function humor() {
-    $(".humor").css("display", "block");
-    $(".mystery").css("display", "none");
-    $(".romance").css("display", "none");
-    $(".sci-fi").css("display", "none");
+    console.log("humor");
+    $(".Humor").show(250);
+    $(".Mystery").hide(250);
+    $(".Romance").hide(250);
+    $(".Sci-Fi").hide(250);
   }
 
   function mystery() {
-    $(".humor").css("display", "none");
-    $(".mystery").css("display", "block");
-    $(".romance").css("display", "none");
-    $(".sci-fi").css("display", "none");
+    $(".Humor").hide();
+    $(".Mystery").show();
+    $(".Romance").hide();
+    $(".Sci-Fi").hide();
   }
 
   function romance() {
-    $(".humor").css("display", "none");
-    $(".mystery").css("display", "none");
-    $(".romance").css("display", "block");
-    $(".sci-fi").css("display", "none");
+    $(".Humor").hide();
+    $(".Mystery").hide();
+    $(".Romance").hide();
+    $(".Sci-Fi").hide();
   }
 
   function scifi() {
-    $(".humor").css("display", "none");
-    $(".mystery").css("display", "none");
-    $(".romance").css("display", "none");
-    $(".sci-fi").css("display", "block");
+    $(".Humor").hide();
+    $(".Mystery").hide();
+    $(".Romance").hide();
+    $(".Sci-Fi").show();
 
   }
 
-  classify("humor");
-  classify("mystery");
-  classify("romance");
-  classify("sci-fi");
+  // classify("humor");
+  // classify("mystery");
+  // classify("romance");
+  // classify("sci-fi");
 
   function sortListDir() {
     var list, i, switching, b, shouldSwitch, dir, switchcount = 0;

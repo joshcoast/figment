@@ -15,22 +15,36 @@
         </div>
       </div>
       <div class="center" id="menu">
-        <a class="dropdown-trigger btn waves-effect btn-large transparent" id="genre" data-target="dropdown1">Genre<i class="material-icons right">arrow_drop_down</i></a>
-        <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
-        <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
+        <a class="dropdown-trigger btn waves-effect btn-large transparent" id="genre" data-target="dropdown1">Genre
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+        <a class="btn waves-effect btn-large transparent" id="popular" href="/read/votes">Most Popular</a>
+        <a class="btn waves-effect btn-large transparent" id="recent" href="/read">Most Recent</a>
       </div>
 
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a id="all" >All</a></li>
-        <li><a id="humor">Humor</a></li>
-        <li><a id="mystery">Mystery</a></li>
-        <li><a id="romance">Romance</a></li>
-        <li><a id="scifi">Sci-Fi</a></li>
+      
+      <ul id="dropdown1" class="dropdown-content genre-select-list">
+        <li>
+          <a id="all">All</a>
+        </li>
+        <li>
+          <a id="humor">Humor</a>
+        </li>
+        <li>
+          <a id="mystery">Mystery</a>
+        </li>
+        <li>
+          <a id="romance">Romance</a>
+        </li>
+        <li>
+          <a id="scifi">Sci-Fi</a>
+        </li>
       </ul>
+
       <div class="story">
         <div class="row">
           {{#each story}}
-          <div class="story-item col s12 m6 l4 matchHeight">
+          <div class="story-item col s12 m6 l4 matchHeight {{this.genre}}">
             <p class="type">{{this.genre}}</p>
             <div class="card">
               <div class="card-image">
@@ -44,27 +58,25 @@
               </div>
               <div class="card-content">
                 <div class="row">
-                <p>{{this.description}}</p>
-                <p id="identifier">{{this.id}}</p>
-<<<<<<< HEAD
-                <button class="down">Dislike</button>
-                <p class="score">{{this.votes}}</p>
-                <button class="up">Like</button>
-=======
+                  <p>{{this.description}}</p>
+                  <p id="identifier">{{this.id}}</p>
 
-                <div class="voting-section">
-                  <button class="down" data-author-id="{{this.id}}">Dislike</button>
-                  <p id="score" class="current-score">{{this.votes}}</p>
-                  <button class="up" data-author-id="{{this.id}}">Like</button>
-                </div>
 
->>>>>>> f68931134e050a012a39fc0698c381189da615a9
+
                 <p id="identifierTwo">{{this.id}}</p>
                 <p class="author-name">by: {{user.firstname}} {{user.lastname}}</p>
                 </div>
 
-                <i class="material-icons like">favorite</i><i class="material-icons dislike">sentiment_very_dissatisfied</i>
-                <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+                  <div class="voting-section">
+                    
+                  <i class="material-icons disliked down" data-author-id="{{this.id}}">sentiment_very_dissatisfied</i>
+                  <a id="score" class="current-score">{{this.votes}}</a>
+                  <i class="material-icons liked up" data-author-id="{{this.id}}">favorite</i>
+                  <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
+                </div>
+                {{!-- <i class="material-icons dislike">sentiment_very_dissatisfied</i>
+                <i class="material-icons like">favorite</i> --}}
+                
 
                 <!-- Modal Structure -->
                 <div id="modal{{this.id}}" class="modal modal-fixed-footer">
@@ -86,209 +98,4 @@
   </div>
   {{> figment/scripts}}
   <script src="/js/read.js" type="text/javascript"></script>
-<<<<<<< HEAD
-  <script src="https://cdn.jsdelivr.net/npm/turndown@4.0.2/lib/turndown.cjs.min.js" type="text/javascript"></script>
-  
-  <script>
-    $("#genre").on("click", genre);
-    $(".title").on("click", readersChoice);
-    $("#humor").on("click", humor);
-    $("#mystery").on("click", mystery);
-    $("#romance").on("click", romance);
-    $("#scifi").on("click", scifi);
-    $("#all").on("click", all);
-    $(".down").on("click", downVote);
-    $(".up").on("click", upVote);
-    $("#alphabet").on("click", alphabet);
-    $("#recent").on("click", mostrecent);
-    var x;
-    var turndownService = new TurndownService();
-
-    touchdown();
-
-    function touchdown() {
-
-      for (i = 0; i < $(".tdStuff").length; i++) {
-      x = turndownService.turndown($(".tdStuff")[i]);
-      $(".tdStuff")[i].innerHTML = x;
-      }
-        
-     }
-
-
-   /* var scoreArray = [];
-
-    scorePush();
-
-    function scorePush() {
-      for (i = 0; i < $(".score").length; i++) {
-
-      scoreArray.push($(".score")[i].innerHTML);
-      scoreArray.sort();
-      }
-      
-      console.log(scoreArray);
-    }*/
-
-    var score = parseInt($("#score").html());
-
-    function downVote() {
-      score = score - 1;
-      $(this).next().html(score);
-
-      var newData = {
-        id: $(this).prev().html(),
-       
-        votes: score 
-      }
-
-    updateScore(newData);
-    }
-
-      function upVote() {
-      score = score + 1;
-      $(this).prev().html(score);
-  
-  var moreData = {
-        id: $(this).next().html(),
-       
-        votes: score 
-      }
-
-    updateScore(moreData);
-
-    }
-
- 
-
-    function alphabet() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".listId")[i].before($(".title")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-    function mostrecent() {
-      $("#genres").css("display", "none");
-      for (i = 0; i < $(".list-group-item").length; i++) {
-        $(".title")[i].before($(".listId")[i]);
-        console.log($(".list-group-item")[i]);
-      }
-      sortListDir();
-    }
-
-   
-
-    function all() {
-      $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
-    }
-
-    function genre() {
-      $("#genres").css("display", "block");
-    }
-
-    function classify(x) {
-      for (i = 0; i < $(".type").length; i++) {
-        if ($(".type")[i].innerHTML == x) {
-
-          $(".type")[i].parentElement.classList.add(x);
-        }
-
-      }
-    }
-
-    function updateScore(newScore) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/story-index",
-      data: newScore
-    })
-      
-  }
-
-
-    function readersChoice() {
-      $(this).next('.body').css("display", "block");
-      $('.type').css("display", "none");
-    }
-    function humor() {
-      $(".humor").css("display", "block");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function mystery() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "block");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function romance() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "block");
-      $(".sci-fi").css("display", "none");
-    }
-
-    function scifi() {
-      $(".humor").css("display", "none");
-      $(".mystery").css("display", "none");
-      $(".romance").css("display", "none");
-      $(".sci-fi").css("display", "block");
-
-    }
-
-   
-
-    classify("humor");
-    classify("mystery");
-    classify("romance");
-    classify("sci-fi");
-
-    function sortListDir() {
-      var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
-      list = document.getElementsByClassName("list-group");
-      switching = true;
-      dir = "asc";
-      while (switching) {
-        switching = false;
-        b = document.getElementsByClassName("list-group-item");
-        for (i = 0; i < (b.length - 1); i++) {
-          shouldSwitch = false;
-
-          if (dir == "asc") {
-            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          } else if (dir == "desc") {
-            if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-
-              shouldSwitch = true;
-              break;
-            }
-          }
-        }
-        if (shouldSwitch) {
-
-          b[i].parentNode.insertBefore(b[i + 1], b[i]);
-          switching = true;
-          switchcount++;
-        } else {
-
-          if (switchcount == 0 && dir == "asc") {
-            dir = "desc";
-            switching = true;
-          }
-        }
-      }
-    }
-  </script> 
-=======
->>>>>>> f68931134e050a012a39fc0698c381189da615a9
 </body>

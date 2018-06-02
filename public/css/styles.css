@@ -312,20 +312,50 @@ li a {
   color:white;
 }
 
+.voting-section {
+
+}
+
+.current-score {
+  display: block;
+  float: left;
+  padding-right: 4px;
+  padding-left: 3px;
+  border: 1px solid #206188;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
 .like {
   cursor: pointer;
+  float: left;
   color: gray;
+  display: block;
+
 }
 .liked {
   cursor: pointer;
   color: red;
+  display: block;
+  float: left;
 }
 .dislike {
   cursor: pointer;
   color: gray;
+  display: block;
+  float: left;
 }
 
 .disliked {
   cursor: pointer;
-  color:darkcyan;
+  color:#206188;
+  display: block;
+  float: left;
+}
+.down.up.current-score {
+display: inline-block;
+}
+.current-score{
+  display: inline-block;
 }
