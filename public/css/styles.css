@@ -208,10 +208,6 @@ li a {
   box-sizing: border-box;
 }
 
-.genre-tag {
-  margin-top: 1.5rem;
-}
-
 .card-content::after {
   clear: both;
   content: "";
@@ -268,4 +264,17 @@ li a {
   bottom: 30%;
   right: 40%;
   width: 5%
+}
+
+#genre{
+  color:white;
+}
+
+.like {
+  cursor: pointer;
+  color: gray;
+}
+.liked {
+  cursor: pointer;
+  color: red;
 }
