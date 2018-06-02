@@ -28,16 +28,12 @@ $(document).ready(function () {
     var txt = 'Figment.observer'; /* The text */
     var speed = 150; /* The speed/duration of the effect in milliseconds */
 
-    // function typeWriter() {
-    //     if (i < txt.length) {
-    //         document.getElementById("textScroll").innerHTML += txt.charAt(i);
-    //         i++;
-    //         setTimeout(typeWriter, speed);
-    //     }
-    // }
-
-    function deleteReverse () {
-        
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("textScroll").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
     }
 
     //Mobile Navigation
