@@ -16,6 +16,7 @@
       </div>
       <div class="center" id="menu">
         <a class="btn waves-effect btn-large transparent" id="genre">Genre</a>
+        <a class="btn waves-effect btn-large transparent" id="alphabet">Alphabetical</a>
         <a class="btn waves-effect btn-large transparent" id="popular">Most Popular</a>
         <a class="btn waves-effect btn-large transparent" id="recent">Most Recent</a>
       </div>
@@ -30,10 +31,12 @@
         <div class="row">
           {{#each story}}
           <div class="story-item col s12 m6 l4 matchHeight">
+            <p class="type">{{this.genre}}</p>
             <div class="card">
               <div class="card-image">
                 <img src="http://picsum.photos/420/320?image=2{{this.id}}">
                 <span class="card-title">{{this.title}}</span>
+                
                 <!-- Modal Trigger -->
                 <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#modal{{this.id}}">
                   <i class="material-icons">add</i>
@@ -41,6 +44,10 @@
               </div>
               <div class="card-content">
                 <p>{{this.description}}</p>
+                <p id="identifier">{{this.id}}</p>
+                <button class="down">Dislike</button>
+                <p id="score">0</p>
+                <button class="up">Like</button>
                 <span class="author-name">by: {{user.firstname}} {{user.lastname}}</span>
                 <span class="new badge light-blue darken-3 genre-tag" data-badge-caption="">{{this.genre}}</span>
                 <!-- Modal Structure -->
@@ -70,11 +77,42 @@
     $("#mystery").on("click", mystery);
     $("#romance").on("click", romance);
     $("#scifi").on("click", scifi);
-    $("#close").on("click", close);
     $("#all").on("click", all);
-    $("#commentB").on("click", comment);
+    $(".down").on("click", downVote);
+    $(".up").on("click", upVote);
     $("#alphabet").on("click", alphabet);
     $("#recent").on("click", mostrecent);
+
+    var score = parseInt($("#score").html());
+    var strange = [];
+
+    function downVote() {
+      score = score - 1;
+      $(this).next().html(score);
+
+      var newData = {
+        id: $(this).prev().html(),
+        title: "Title",
+        genre: "Genre",
+        description: "Description",
+        body: "Body",
+        votes: score 
+      }
+
+    updateScore(newData);
+    }
+
+      function upVote() {
+      score = score + 1;
+      $(this).prev().html(score);
+    }
+
+    mercy();
+
+    function mercy() {
+      strange.push($(".story-item"));
+      console.log(strange);
+    }
 
     function alphabet() {
       $("#genres").css("display", "none");
@@ -94,15 +132,7 @@
       sortListDir();
     }
 
-    function comment() {
-      let commentData = {
-        reader: "Ya boy",
-        feedback: $("#commentA").val().trim()
-      };
-      $("#comment").css("display", "none");
-      $.post("/api/comments", commentData)
-        .then(alert("Comment Submitted"));
-    }
+   
 
     function all() {
       $('.humor', '.mystery', '.romance', '.sci-fi').css("display", "block");
@@ -122,10 +152,19 @@
       }
     }
 
+    function updateScore(newScore) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/story-index",
+      data: newScore
+    })
+      
+  }
+
+
     function readersChoice() {
       $(this).next('.body').css("display", "block");
       $('.type').css("display", "none");
-      $('#close', '#comment').css("display", "block");
     }
     function humor() {
       $(".humor").css("display", "block");
@@ -135,27 +174,28 @@
     }
 
     function mystery() {
+      $(".humor").css("display", "none");
       $(".mystery").css("display", "block");
-      $('.humor', '.romance', '.sci-fi').css("display", "none");
+      $(".romance").css("display", "none");
+      $(".sci-fi").css("display", "none");
     }
 
     function romance() {
+      $(".humor").css("display", "none");
+      $(".mystery").css("display", "none");
       $(".romance").css("display", "block");
-      $('.mystery', '.humor', '.sci-fi').css("display", "none");
+      $(".sci-fi").css("display", "none");
     }
 
     function scifi() {
+      $(".humor").css("display", "none");
+      $(".mystery").css("display", "none");
+      $(".romance").css("display", "none");
       $(".sci-fi").css("display", "block");
-      $('.mystery', '.humor', '.romance').css("display", "none");
 
     }
 
-    function close() {
-      $("#close").css("display", "none");
-      $(".type").css("display", "block");
-      $(".body").css("display", "none");
-      $("#comment").css("display", "none");
-    }
+   
 
     classify("humor");
     classify("mystery");

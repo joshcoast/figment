@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },
+
+    votes: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
   }, {
     underscored: true

@@ -269,3 +269,8 @@ li a {
   right: 40%;
   width: 5%
 }
+
+.type {
+  display: none;
+}
+
