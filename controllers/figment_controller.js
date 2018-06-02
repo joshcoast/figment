@@ -59,6 +59,18 @@ router.get("/read", function (req, res) {
   });
 });
 
+router.get("/practice", function (req, res) {
+  db.story.findAll({include: [db.user]}).then(function (data) {
+    var hbsObject = {
+      story: data,
+      user: req.user
+    };
+    res.render('practice', hbsObject);
+  }).catch(function (err) {
+    console.log(err);
+  });
+});
+
 
 // API Routes
 // =============================================================
@@ -85,7 +97,7 @@ router.post("/api/story-index", function (req, res) {
     description: req.body.description,
     genre: req.body.genre,
     body: req.body.body,
-    votes: req.body.votes
+    votes: 0
   })
   .then(function(dbStory) {
     res.json(dbStory);

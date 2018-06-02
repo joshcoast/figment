@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="container">
-          <h1 class="center homeText">Figment.Observer</h1>
+          <h1 class="center homeText" id="fuck">Figment.Observer</h1>
         </div>
       </div>
       <div class="row">
@@ -55,7 +55,7 @@
                 <div id="modal{{this.id}}" class="modal modal-fixed-footer">
                   <div class="modal-content">
                     <h4>{{this.title}}</h4>
-                    <p>{{this.body}}</p>
+                    <p class="tdStuff">{{this.body}}</p>
                   </div>
                   <div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
@@ -71,6 +71,8 @@
   </div>
   {{> figment/scripts}}
   <script src="/js/read.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turndown@4.0.2/lib/turndown.cjs.min.js" type="text/javascript"></script>
+  
   <script>
     $("#genre").on("click", genre);
     $(".title").on("click", readersChoice);
@@ -83,6 +85,21 @@
     $(".up").on("click", upVote);
     $("#alphabet").on("click", alphabet);
     $("#recent").on("click", mostrecent);
+    var x;
+    var turndownService = new TurndownService();
+
+    touchdown();
+
+    function touchdown() {
+
+      for (i = 0; i < $(".tdStuff").length; i++) {
+      x = turndownService.turndown($(".tdStuff")[i]);
+      $(".tdStuff")[i].innerHTML = x;
+      }
+        
+     }
+
+
    /* var scoreArray = [];
 
     scorePush();
