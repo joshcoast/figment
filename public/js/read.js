@@ -21,6 +21,20 @@ $(document).ready(function () {
   //   });
   // }
 
+  const turndownService = new TurndownService();
+  const x;
+
+
+  function touchdown() {
+    for (i = 0; i < $(".tdStuff").length; i++) {
+      x = turndownService($(".tdStuff")[i]);
+      $(".tdStuff")[i].html(x);
+
+    }
+
+  }
+
+touchdown();
   // Votes!
   $(".down").on("click", downVote);
   $(".up").on("click", upVote);
