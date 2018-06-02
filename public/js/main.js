@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     if ($("#scrollText").length) {
 
-        $("#scrollText").show();
+        typeWriter();
 
     }
 
