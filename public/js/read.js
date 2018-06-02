@@ -83,7 +83,7 @@ $(document).ready(function () {
   function romance() {
     $(".Humor").hide();
     $(".Mystery").hide();
-    $(".Romance").hide();
+    $(".Romance").show();
     $(".Sci-Fi").hide();
   }
 
