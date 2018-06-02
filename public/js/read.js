@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   function touchdown() {
     for (i = 0; i < $(".tdStuff").length; i++) {
-      x = turndownService($(".tdStuff")[i]);
+      x = turndownService.turndown($(".tdStuff")[i]);
       $(".tdStuff")[i].html(x);
 
     }
