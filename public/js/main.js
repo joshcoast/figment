@@ -80,10 +80,8 @@ $(document).ready(function () {
     }
     addmenulinks();
 
-    if ($("#scrollText").length) {
-
+    if ($("#textScroll").length) {
         typeWriter();
-
     }
 
 });
