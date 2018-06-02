@@ -59,10 +59,6 @@ router.get("/read", function (req, res) {
   });
 });
 
-<<<<<<< HEAD
-router.get("/practice", function (req, res) {
-  db.story.findAll({include: [db.user]}).then(function (data) {
-=======
 router.get("/read/votes", function (req, res) {
   db.story.findAll({
     include: [db.user],
@@ -70,16 +66,11 @@ router.get("/read/votes", function (req, res) {
       ['votes', 'DESC']
     ],
   }).then(function (data) {
->>>>>>> f68931134e050a012a39fc0698c381189da615a9
     var hbsObject = {
       story: data,
       user: req.user
     };
-<<<<<<< HEAD
-    res.render('practice', hbsObject);
-=======
     res.render('read', hbsObject);
->>>>>>> f68931134e050a012a39fc0698c381189da615a9
   }).catch(function (err) {
     console.log(err);
   });
