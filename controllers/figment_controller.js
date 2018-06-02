@@ -1,3 +1,4 @@
+
 // Dependencies
 // =============================================================
 const express = require('express');
@@ -64,7 +65,6 @@ router.get("/read", function (req, res) {
 
 // Stories APIs
 router.get("/api/story-index", function (req, res) {
-  console.log("get /api/story-index");
   var query = {};
   if (req.query.userid) {
     query.userid = req.query.userid;
@@ -84,13 +84,25 @@ router.post("/api/story-index", function (req, res) {
     title: req.body.title,
     description: req.body.description,
     genre: req.body.genre,
-    body: req.body.body
+    body: req.body.body,
+    votes: req.body.votes
   })
   .then(function(dbStory) {
     res.json(dbStory);
   });
 });
 
+router.put("/api/story-index", function(req, res) {
+  db.story.update(req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(function(dbStory) {
+      res.json(dbStory);
+    });
+});
 
 
 

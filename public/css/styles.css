@@ -269,3 +269,15 @@ li a {
   right: 40%;
   width: 5%
 }
+
+.type {
+  display: none;
+}
+
+#identifier {
+  display: none;
+}
+
+#identifierTwo  {
+  display: none;
+}

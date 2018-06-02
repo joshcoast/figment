@@ -17,7 +17,8 @@ $(document).ready(function() {
       title: storyTitle,
       description: storyDescription,
       genre: storyGenre,
-      body: storyBody
+      body: storyBody,
+      votes: 0
     };
 
     $.post("/api/story-index/", storyData).then(getAuthors);
